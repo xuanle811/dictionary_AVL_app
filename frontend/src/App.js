@@ -122,12 +122,44 @@ const saveEdit = async () => {
             />
           </div>
           <div className="col-md-2">
-            <button onClick={addWord} className="btn btn-primary w-100">
+            <button onClick={addWord} className="btn btn-primary px-4">
               Thêm
             </button>
           </div>
         </div>
       </div>
+
+
+      <div className="card p-3 mb-4">
+      <div className="row g-2 align-items-center">
+        <div className="col-md-8">
+          <input
+            type="text"
+            placeholder="Nhập từ cần tìm..."
+            className="form-control"
+            value={word}
+            onChange={(e) => setWord(e.target.value)}
+            onKeyDown={(e) => { if (e.key === 'Enter') searchWord(); }} // Nhấn Enter cũng tìm
+          />
+        </div>
+        <div className="col-md-4">
+          <button className="btn btn-info px-4" onClick={searchWord}>
+            🔍 Tìm
+          </button>
+        </div>
+      </div>
+
+      {/* Hiển thị kết quả tìm kiếm */}
+      {word && (
+        <div className="mt-3">
+          {message ? (
+            <p className="text-danger">{message}</p>
+          ) : definition ? (
+            <p><strong>{word}:</strong> {definition}</p>
+          ) : null}
+        </div>
+      )}
+    </div>
 
       {/* Bảng hiển thị danh sách */}
       <table className="table table-bordered table-hover">

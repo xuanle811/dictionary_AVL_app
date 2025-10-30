@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 # Xác định đường dẫn tuyệt đối đến database trong thư mục backend
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "dict_hh.db")
+DB_PATH = os.path.join(BASE_DIR, "dictionary.db")
 
 
 # Kết nối SQLite
