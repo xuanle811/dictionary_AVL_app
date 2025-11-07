@@ -1,1 +1,62 @@
-{ "term": "load balancer", "frequency": 12, "definition": "...", "context": "..." }
+[
+  { 
+    "word": "offset", 
+    "frequency": 15, 
+    "definition": "A displacement or distance in a particular direction.", 
+    "context": "Memory offset specifies the distance from the start of a segment."
+  },
+  { 
+    "word": "throughput", 
+    "frequency": 12, 
+    "definition": "The amount of data processed by a system in a given period.", 
+    "context": "Network throughput increased after upgrading the router."
+  },
+  { 
+    "word": "latency", 
+    "frequency": 10, 
+    "definition": "The time delay between a request and the response.", 
+    "context": "Low latency is critical for online gaming."
+  },
+  { 
+    "word": "cache coherence", 
+    "frequency": 5, 
+    "definition": "A mechanism to ensure that multiple caches have consistent data.", 
+    "context": "Cache coherence protocols prevent data inconsistency in multiprocessor systems."
+  },
+  { 
+    "word": "pipeline", 
+    "frequency": 8, 
+    "definition": "A sequence of data processing stages where output of one stage is input to the next.", 
+    "context": "CPU instruction pipelining improves execution efficiency."
+  },
+  { 
+    "word": "deadlock", 
+    "frequency": 6, 
+    "definition": "A situation where processes are blocked waiting for resources held by each other.", 
+    "context": "Deadlocks can halt system performance if not properly managed."
+  },
+  { 
+    "word": "mutex", 
+    "frequency": 9, 
+    "definition": "A mutual exclusion object used to prevent simultaneous access to a shared resource.", 
+    "context": "Mutexes ensure that only one thread modifies the critical section at a time."
+  },
+  { 
+    "word": "load balancer", 
+    "frequency": 12, 
+    "definition": "A device or software that distributes network traffic across multiple servers.", 
+    "context": "The load balancer ensures even distribution of requests to backend servers."
+  },
+  { 
+    "word": "thread pool", 
+    "frequency": 7, 
+    "definition": "A collection of pre-instantiated threads ready to perform tasks.", 
+    "context": "Thread pools reduce overhead by reusing threads for multiple tasks."
+  },
+  { 
+    "word": "API gateway", 
+    "frequency": 11, 
+    "definition": "A server that acts as an entry point for client requests to access multiple APIs.", 
+    "context": "The API gateway handles authentication, routing, and rate limiting for requests."
+  }
+]

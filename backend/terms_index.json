@@ -1,1 +1,12 @@
-{ "word": "offset" }
+[
+  { "word": "offset", "offset": 0 },
+  { "word": "throughput", "offset": 1 },
+  { "word": "latency", "offset": 2 },
+  { "word": "cache coherence", "offset": 3 },
+  { "word": "pipeline", "offset": 4 },
+  { "word": "deadlock", "offset": 5 },
+  { "word": "mutex", "offset": 6 },
+  { "word": "load balancer", "offset": 7 },
+  { "word": "thread pool", "offset": 8 },
+  { "word": "API gateway", "offset": 9 }
+]
