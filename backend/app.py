@@ -5,13 +5,21 @@ import os
 from flask_cors import CORS
 from avl_tree import AVLTree, AVLNode
 import sqlite3
-
+from pdf_processing import process_multi_pdfs
+from io import BytesIO
+from werkzeug.utils import secure_filename
 app = Flask(__name__)
+UPLOAD_FOLDER = "uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
 
 CORS(app)
 # Xác định đường dẫn tuyệt đối đến database trong thư mục backend
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "dictionary.db")
+
+
+
 
 
 # Kết nối SQLite
@@ -35,6 +43,27 @@ def load_data_to_tree():
 
 # Gọi hàm nạp dữ liệu ngay khi Flask khởi động
 load_data_to_tree()
+
+# ===API extract terms
+@app.route("/api/process-pdfs", methods=["POST"])
+def upload_pdfs():
+    if "files" not in request.files:
+        return jsonify({"error": "No files provided"}), 400
+
+    files = request.files.getlist("files")
+    saved_paths = []
+
+    # Lưu tất cả file trước khi xử lý
+    for f in files:
+        filename = secure_filename(f.filename)
+        path = os.path.join(UPLOAD_FOLDER, filename)
+        f.save(path)
+        saved_paths.append(path)
+
+    # Gọi xử lý nhiều PDF
+    results = process_multi_pdfs(saved_paths, dictpath="data/dict.json")
+
+    return jsonify(results), 200
 
 
 # ===== API: Lấy tất cả từ =====

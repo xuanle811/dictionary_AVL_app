@@ -1,0 +1,270 @@
+[
+  {
+    "offset": 0,
+    "term": "methodology"
+  },
+  {
+    "offset": 1,
+    "term": "node"
+  },
+  {
+    "offset": 2,
+    "term": "programming language"
+  },
+  {
+    "offset": 3,
+    "term": "computer science"
+  },
+  {
+    "offset": 4,
+    "term": "data structure"
+  },
+  {
+    "offset": 5,
+    "term": "list"
+  },
+  {
+    "offset": 6,
+    "term": "field"
+  },
+  {
+    "offset": 7,
+    "term": "selection"
+  },
+  {
+    "offset": 8,
+    "term": "procedure"
+  },
+  {
+    "offset": 9,
+    "term": "set"
+  },
+  {
+    "offset": 10,
+    "term": "sequence"
+  },
+  {
+    "offset": 11,
+    "term": "event"
+  },
+  {
+    "offset": 12,
+    "term": "user"
+  },
+  {
+    "offset": 13,
+    "term": "computer"
+  },
+  {
+    "offset": 14,
+    "term": "character"
+  },
+  {
+    "offset": 15,
+    "term": "algorithm"
+  },
+  {
+    "offset": 16,
+    "term": "internet"
+  },
+  {
+    "offset": 17,
+    "term": "server"
+  },
+  {
+    "offset": 18,
+    "term": "download"
+  },
+  {
+    "offset": 19,
+    "term": "class"
+  },
+  {
+    "offset": 20,
+    "term": "computation"
+  },
+  {
+    "offset": 21,
+    "term": "binary tree"
+  },
+  {
+    "offset": 22,
+    "term": "method"
+  },
+  {
+    "offset": 23,
+    "term": "tree"
+  },
+  {
+    "offset": 24,
+    "term": "domain"
+  },
+  {
+    "offset": 25,
+    "term": "bit"
+  },
+  {
+    "offset": 26,
+    "term": "computing"
+  },
+  {
+    "offset": 27,
+    "term": "reference"
+  },
+  {
+    "offset": 28,
+    "term": "interface"
+  },
+  {
+    "offset": 29,
+    "term": "expression"
+  },
+  {
+    "offset": 30,
+    "term": "state"
+  },
+  {
+    "offset": 31,
+    "term": "syntax"
+  },
+  {
+    "offset": 32,
+    "term": "computational linguistics"
+  },
+  {
+    "offset": 33,
+    "term": "linear search"
+  },
+  {
+    "offset": 34,
+    "term": "frame"
+  },
+  {
+    "offset": 35,
+    "term": "lora"
+  },
+  {
+    "offset": 36,
+    "term": "attention mechanism"
+  },
+  {
+    "offset": 37,
+    "term": "hyperparameter"
+  },
+  {
+    "offset": 38,
+    "term": "knowledge distillation"
+  },
+  {
+    "offset": 39,
+    "term": "pattern recognition"
+  },
+  {
+    "offset": 40,
+    "term": "feature extraction"
+  },
+  {
+    "offset": 41,
+    "term": "transfer learning"
+  },
+  {
+    "offset": 42,
+    "term": "collection"
+  },
+  {
+    "offset": 43,
+    "term": "encryption"
+  },
+  {
+    "offset": 44,
+    "term": "software"
+  },
+  {
+    "offset": 45,
+    "term": "execution"
+  },
+  {
+    "offset": 46,
+    "term": "object"
+  },
+  {
+    "offset": 47,
+    "term": "naive bayes classifier"
+  },
+  {
+    "offset": 48,
+    "term": "mutation"
+  },
+  {
+    "offset": 49,
+    "term": "random forest"
+  },
+  {
+    "offset": 50,
+    "term": "evolutionary computation"
+  },
+  {
+    "offset": 51,
+    "term": "support vector machines"
+  },
+  {
+    "offset": 52,
+    "term": "stream"
+  },
+  {
+    "offset": 53,
+    "term": "neural network"
+  },
+  {
+    "offset": 54,
+    "term": "computer vision"
+  },
+  {
+    "offset": 55,
+    "term": "cognitive computing"
+  },
+  {
+    "offset": 56,
+    "term": "feature"
+  },
+  {
+    "offset": 57,
+    "term": "unique"
+  },
+  {
+    "offset": 58,
+    "term": "parameter"
+  },
+  {
+    "offset": 59,
+    "term": "transformer"
+  },
+  {
+    "offset": 60,
+    "term": "record"
+  },
+  {
+    "offset": 61,
+    "term": "convolutional neural network"
+  },
+  {
+    "offset": 62,
+    "term": "data mining"
+  },
+  {
+    "offset": 63,
+    "term": "analytics"
+  },
+  {
+    "offset": 64,
+    "term": "supervised learning"
+  },
+  {
+    "offset": 65,
+    "term": "computational mathematics"
+  },
+  {
+    "offset": 66,
+    "term": "deep learning"
+  }
+]
