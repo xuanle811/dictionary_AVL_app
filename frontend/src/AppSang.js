@@ -1,11 +1,3 @@
-// AppSang_ui_only.js
-// Simplified frontend: removed AVL/DecisionTree/internal text processing.
-// Kept original UI, buttons, modal and added:
-// - calls to backend APIs for upload / process / CRUD
-// - "Save Dictionary" button which calls /save_terms
-// - word detail view modal when clicking the word title
-// - uses same edit modal to update meanings
-
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./AppSang.css";
@@ -17,8 +9,8 @@ const USE_MOCK_API = false; // set true for local UI testing without backend
 const API_BASE = "http://127.0.0.1:5000";
 
 let mockVocabulary = [
-  { id: 1, word: "algorithm", meaning: "thuật toán", example: "Decision tree là một thuật toán.", source: "mock", createdAt: new Date().toISOString() },
-  { id: 2, word: "database", meaning: "cơ sở dữ liệu", example: "Ví dụ: MySQL, Postgres", source: "mock", createdAt: new Date().toISOString() },
+  { id: 1, word: "algorithm", definition: "thuật toán", example: "Decision tree là một thuật toán.", source: "mock", createdAt: new Date().toISOString() },
+  { id: 2, word: "database", definition: "cơ sở dữ liệu", example: "Ví dụ: MySQL, Postgres", source: "mock", createdAt: new Date().toISOString() },
 ];
 
 async function apiCall(endpoint, options = {}) {
@@ -38,7 +30,7 @@ async function apiCall(endpoint, options = {}) {
 
     if (endpoint === "/insert_term" && method === "POST") {
       const body = options.body ? JSON.parse(options.body) : {};
-      const newItem = { id: mockVocabulary.length + 1, word: body.term, meaning: body.definition || "", source: "mock", createdAt: new Date().toISOString() };
+      const newItem = { id: mockVocabulary.length + 1, word: body.term, definition: body.definition || "", source: "mock", createdAt: new Date().toISOString() };
       mockVocabulary.push(newItem);
       return { success: true, data: newItem };
     }
@@ -46,7 +38,7 @@ async function apiCall(endpoint, options = {}) {
     if (endpoint === "/update_term" && method === "PUT") {
       const body = options.body ? JSON.parse(options.body) : {};
       const idx = mockVocabulary.findIndex((w) => w.word.toLowerCase() === (body.term || "").toLowerCase());
-      if (idx !== -1) { mockVocabulary[idx] = { ...mockVocabulary[idx], meaning: body.definition }; return { success: true, data: mockVocabulary[idx] }; }
+      if (idx !== -1) { mockVocabulary[idx] = { ...mockVocabulary[idx], definition: body.definition }; return { success: true, data: mockVocabulary[idx] }; }
       return { success: false };
     }
 
@@ -59,6 +51,25 @@ async function apiCall(endpoint, options = {}) {
 
     if (endpoint === "/save_terms" && method === "POST") {
       return { success: true, message: "saved" };
+    }
+
+    if (endpoint.startsWith("/fuzzy_full") && method === "GET") {
+      // mock returning results array of minimal objects
+      const url = new URL("http://dummy" + endpoint);
+      const q = url.searchParams.get("query") || "";
+      // naive mock: return words containing q
+      const results = mockVocabulary
+        .filter(w => w.word.toLowerCase().includes(q.toLowerCase()))
+        .map(w => ({ term: w.word, offset: w.id }));
+      return { query: q, threshold: 2, results };
+    }
+
+    if (endpoint.startsWith("/term_info") && method === "GET") {
+      const url = new URL("http://dummy" + endpoint);
+      const offset = Number(url.searchParams.get("offset"));
+      const found = mockVocabulary.find(w => w.id === offset);
+      if (!found) return { success: false, error: "Not found" };
+      return { success: true, data: { offset: found.id, definition: found.definition, context: [], metadata: {} } };
     }
 
     return {};
@@ -99,20 +110,34 @@ const getNotificationStyle = (type) => {
 
 // ==================== MAIN REACT COMPONENT ====================
 const AppSang = () => {
+  // config for suggestions / fuzzy
+  const MIN_SUGGEST_CHARS =2;
+  const SUGGEST_DEBOUNCE_MS = 300;
+  const computeThreshold = (q) => {
+    if (!q) return 1;
+    const L = q.length;
+    if (L <= 3) return 1;
+    if (L <= 6) return 3;
+    return Math.max(4, Math.floor(L * 0.45));
+  };
+
   // core states (UI only)
   const [words, setWords] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const suggestionDebounceRef = useRef(null);
   const [exactMatch, setExactMatch] = useState(false);
-  const [includeMeanings, setIncludeMeanings] = useState(true);
+  const [includeDefinitions, setIncludeDefinitions] = useState(true);
 
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFiles, setSelectedFiles] = useState(null);
   const [fileName, setFileName] = useState("No file selected");
 
   const [modalOpen, setModalOpen] = useState(false);
   const [detailOpen, setDetailOpen] = useState(false);
   const [currentWord, setCurrentWord] = useState(null); // object for edit or detail
-  const [editMeaning, setEditMeaning] = useState("");
+  const [editDefinition, setEditDefinition] = useState("");
 
   const [loadingMessage, setLoadingMessage] = useState("");
   const [notifications, setNotifications] = useState([]);
@@ -136,7 +161,16 @@ const AppSang = () => {
       } else {
         res = await apiCall("/all-terms");
       }
-      const normalized = (res.data || []).map((item, idx) => ({ id: item.id ?? idx, word: item.word, meaning: item.meaning || item.definition || "", example: item.example || "", source: item.source || "backend", createdAt: item.createdAt || item.created_at || null }));
+      const normalized = (res.data || []).map((item, idx) => ({
+        id: item.id ?? idx,
+        word: item.word,
+        definition: item.definition || item.definition || "",
+        definition: item.definition || item.definition || "",
+        example: item.example || "",
+        source: item.source || "backend",
+        createdAt: item.createdAt || item.created_at || null,
+        context: item.context || []
+      }));
       setWords(normalized);
     } catch (err) {
       console.error(err);
@@ -148,46 +182,139 @@ const AppSang = () => {
 
   useEffect(() => { loadVocabulary(); }, [loadVocabulary]);
 
+  // suggestions debounce
+  useEffect(() => {
+    if (suggestionDebounceRef.current) clearTimeout(suggestionDebounceRef.current);
+
+    suggestionDebounceRef.current = setTimeout(() => {
+      if (searchTerm && searchTerm.trim().length >= MIN_SUGGEST_CHARS) {
+        fetchSuggestions(searchTerm);
+        setShowSuggestions(true);
+      } else {
+        setSuggestions([]);
+        setShowSuggestions(false);
+      }
+    }, SUGGEST_DEBOUNCE_MS);
+
+    return () => {
+      if (suggestionDebounceRef.current) clearTimeout(suggestionDebounceRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm]); // only depend on searchTerm for suggestions
+
   // ----- Search -----
   const handleSearch = async () => {
     const term = (searchTerm || "").trim();
     if (!term) { showNotification("Vui lòng nhập từ cần tìm", "error"); return; }
 
-    // Prefer backend search API if exists; otherwise do simple local filter
     try {
       setLoadingMessage("Đang tìm kiếm...");
+
       if (!USE_MOCK_API) {
         try {
           const res = await apiCall(`/search?term=${encodeURIComponent(term)}&exact=${exactMatch ? 1 : 0}`);
-          if (res && res.data) { setSearchResults(res.data); return; }
-        } catch (e) { console.debug("No backend /search or failed, fallback to local filter"); }
+
+          if (res && res.error) {
+            console.debug("Backend returned error:", res.error);
+            showNotification("Lỗi từ server: " + res.error, "warning");
+          } else if (res && typeof res.found !== "undefined") {
+            if (res.found) {
+              setSearchResults([{
+                id: res.offset ?? null,
+                word: res.term ?? term,
+                definition: res.definition || "",
+                definition: res.definition || "",
+                context: Array.isArray(res.context) ? res.context : [],
+                source: "backend"
+              }]);
+            } else {
+              setSearchResults([]);
+              showNotification(`🔍 Không tìm thấy "${term}" trên server`, "info");
+            }
+            return;
+          }
+        } catch (e) {
+          console.debug("No backend /search or failed, fallback to local filter", e);
+        }
       }
 
-      // local filter as fallback
+      // local filter as fallback (only when search button explicitly used)
       const results = words.filter((w) => {
-        const lw = w.word.toLowerCase();
+        const lw = (w.word || "").toLowerCase();
         if (exactMatch) return lw === term.toLowerCase();
-        if (includeMeanings && w.meaning && w.meaning.toLowerCase().includes(term.toLowerCase())) return true;
+        if (includeDefinitions && w.definition && w.definition.toLowerCase().includes(term.toLowerCase())) return true;
         return lw.includes(term.toLowerCase());
       });
+
       setSearchResults(results);
+      if (results.length === 0) showNotification(`🔍 Không tìm thấy "${term}" (local).`, "info");
     } catch (err) {
       console.error(err);
-      showNotification("Lỗi tìm kiếm: " + err.message, "error");
-    } finally { setLoadingMessage(""); }
+      showNotification("Lỗi tìm kiếm: " + (err.message || err), "error");
+    } finally {
+      setLoadingMessage("");
+    }
+  };
+
+  // ----- Suggestions: use backend fuzzy_full ONLY (no local fallback) -----
+  const fetchSuggestions = async (q) => {
+    const qTrim = (q || "").trim();
+    if (!qTrim || qTrim.length < MIN_SUGGEST_CHARS) {
+      setSuggestions([]);
+      return;
+    }
+
+    try {
+      const threshold = computeThreshold(qTrim);
+      const res = await apiCall(`/fuzzy_full?query=${encodeURIComponent(qTrim)}&threshold=${encodeURIComponent(threshold)}`);
+
+      // Support both { results: [...] } and direct array response
+      const arr = Array.isArray(res.results) ? res.results : (Array.isArray(res) ? res : []);
+      if (!arr || arr.length === 0) {
+        setSuggestions([]);
+        return;
+      }
+
+      // normalize: only need term + offset for suggestions
+      const normalized = arr.map((r, i) => ({
+        id: r.offset ?? i,
+        word: r.term ?? r.word ?? "",
+      }));
+
+      setSuggestions(normalized.slice(0, 10));
+    } catch (err) {
+      console.error("Fuzzy API failed:", err);
+      // If backend fails, clear suggestions (NO local fallback per request)
+      setSuggestions([]);
+    }
+  };
+
+  const handleSelectSuggestion = (item) => {
+    if (!item) return;
+    // put term into input and hide suggestions
+    setSearchTerm(item.word || "");
+    setShowSuggestions(false);
+
+    // Open detail modal by calling openDetail with { id, word }
+    openDetail({ id: item.id, word: item.word });
   };
 
   const handleSearchKeyDown = (e) => { if (e.key === "Enter") handleSearch(); };
 
   // ----- File upload / process -----
   const handleFileButtonClick = () => { if (fileInputRef.current) fileInputRef.current.click(); };
-  const handleFileChange = (e) => { const f = e.target.files && e.target.files[0]; if (!f) return; setSelectedFile(f); setFileName(f.name); };
+  const handleFileChange = (e) => {
+    const files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
+    setSelectedFiles(files);
+    setFileName(files.map(f => f.name).join(", "));
+  };
 
   const handleProcessFile = async () => {
-    if (!selectedFile) { showNotification("Vui lòng chọn file tài liệu trước", "error"); return; }
+    if (!selectedFiles) { showNotification("Vui lòng chọn file tài liệu trước", "error"); return; }
     try {
       setLoadingMessage("Đang gửi file lên server...");
-      const formData = new FormData(); formData.append("document", selectedFile);
+      const formData = new FormData(); selectedFiles.forEach(f => formData.append("documents", f));
       await apiCall("/upload-extract_pdf", { method: "POST", body: formData });
       showNotification("✅ File đã được gửi và xử lý ở backend (nếu API có).", "success");
       await loadVocabulary();
@@ -201,7 +328,6 @@ const AppSang = () => {
   const handleSaveDictionary = async () => {
     try {
       setLoadingMessage("Đang lưu từ điển...");
-      // send to backend; backend decides how to persist
       await apiCall("/save_terms", { method: "POST", body: { terms: words } });
       showNotification("✅ Đã lưu từ điển trên server.", "success");
     } catch (err) {
@@ -211,33 +337,61 @@ const AppSang = () => {
   };
 
   // ----- Word detail / edit -----
-  const openDetail = (wordObj) => { setCurrentWord(wordObj); setDetailOpen(true); };
-  const closeDetail = () => { setDetailOpen(false); setCurrentWord(null); };
+  const openDetail = async (wordObj) => {
+    try {
+      setLoadingMessage("Đang tải thông tin chi tiết...");
 
-  const openModalForWord = (wordObj) => { setCurrentWord(wordObj); setEditMeaning(wordObj.meaning || ""); setModalOpen(true); };
-  const openModalForNewWord = (wordText) => { setCurrentWord({ id: null, word: wordText }); setEditMeaning(""); setModalOpen(true); };
-  const closeModal = () => { setModalOpen(false); setCurrentWord(null); setEditMeaning(""); };
+      // wordObj expected to contain id (offset)
+      const res = await apiCall(`/term_info?offset=${encodeURIComponent(wordObj.id)}`);
 
-  const handleSaveMeaning = async () => {
+      if (!res.success) {
+        showNotification(res.error || "Không tìm thấy thông tin chi tiết!", "error");
+        return;
+      }
+
+      const info = res.data;
+      const fullInfo = {
+        id: wordObj.id,
+        word: wordObj.word,
+        definition: info.definition || "",
+        definition: info.definition || "",
+        context: info.context || [],
+        metadata: info.metadata || {},
+        source: "backend"
+      };
+
+      setCurrentWord(fullInfo);
+      setDetailOpen(true);
+    } catch (err) {
+      console.error(err);
+      showNotification("Lỗi tải thông tin từ BE!", "error");
+    } finally {
+      setLoadingMessage("");
+    }
+  };
+
+  const closeDetail = () => {
+    setDetailOpen(false);
+  };
+
+  const openModalForWord = (wordObj) => { setDetailOpen(false); setCurrentWord(wordObj); setEditDefinition(wordObj.definition || ""); setModalOpen(true); };
+  const openModalForNewWord = (wordText) => { setCurrentWord({ id: null, word: wordText }); setEditDefinition(""); setModalOpen(true); };
+  const closeModal = () => { setModalOpen(false); setCurrentWord(null); setEditDefinition(""); };
+
+  const handleSaveDefinition = async () => {
     const word = (currentWord?.word || "").trim();
-    const meaning = (editMeaning || "").trim();
+    const meaning = (editDefinition || "").trim();
     if (!word) { showNotification("Không có từ để lưu", "error"); return; }
     if (!meaning) { showNotification("Vui lòng nhập nghĩa cho từ.", "error"); return; }
 
     try {
-      if (USE_MOCK_API) {
-        await apiCall("/update_term", { method: "PUT", body: JSON.stringify({ term: word, definition: meaning }) });
-      } else {
-        await apiCall("/update_term", { method: "PUT", body: JSON.stringify({ term: word, definition: meaning }) });
-      }
+      await apiCall("/update_term", { method: "PUT", body: JSON.stringify({ term: word, definition: meaning }) });
 
-      // update local view optimistically
       setWords((prev) => {
         const idx = prev.findIndex((w) => w.word.toLowerCase() === word.toLowerCase());
         if (idx !== -1) {
           const arr = [...prev]; arr[idx] = { ...arr[idx], meaning, source: "backend" }; return arr;
         }
-        // new
         const newItem = { id: prev.length > 0 ? prev[prev.length - 1].id + 1 : 1, word, meaning, source: "backend", createdAt: new Date().toISOString() };
         return [...prev, newItem];
       });
@@ -295,12 +449,56 @@ const AppSang = () => {
           <section className="section search-section-fixed">
             <h3>Search Vocabulary</h3>
             <div className="search-box">
-              <input type="text" id="searchInput" placeholder="Search English..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onKeyDown={handleSearchKeyDown} />
+              <div style={{ position: "relative" }}>
+                <input
+                  type="text"
+                  id="searchInput"
+                  placeholder="Search English..."
+                  value={searchTerm}
+                  onChange={(e) => { setSearchTerm(e.target.value); }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      if (showSuggestions && suggestions.length > 0) {
+                        handleSelectSuggestion(suggestions[0]);
+                      } else {
+                        handleSearch();
+                      }
+                    } else {
+                      handleSearchKeyDown(e);
+                    }
+                  }}
+                  onFocus={() => { if (suggestions.length > 0) setShowSuggestions(true); }}
+                  onBlur={() => { setTimeout(() => setShowSuggestions(false), 150); }} // delay để allow click
+                  autoComplete="off"
+                />
+
+                {/* Suggestion dropdown */}
+                {showSuggestions && suggestions && suggestions.length > 0 && (
+                  <div style={{
+                    position: "absolute",
+                    left: 0,
+                    right: 0,
+                    background: "white",
+                    border: "1px solid #ddd",
+                    maxHeight: 260,
+                    overflowY: "auto",
+                    zIndex: 9999,
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.08)"
+                  }}>
+                    {suggestions.map((s) => (
+                      <div key={`${s.id}-${s.word}`} onMouseDown={(e) => { e.preventDefault(); handleSelectSuggestion(s); }} style={{ padding: 10, cursor: "pointer", borderBottom: "1px solid #f1f1f1" }}>
+                        <div style={{ fontWeight: "600" }}>{s.word}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <button id="searchBtn" className="btn-primary" onClick={handleSearch}>🔍 Search</button>
             </div>
             <div className="search-filters">
               <label><input type="checkbox" id="exactMatch" checked={exactMatch} onChange={(e) => setExactMatch(e.target.checked)} /> Exact match</label>
-              <label><input type="checkbox" id="includeMeanings" checked={includeMeanings} onChange={(e) => setIncludeMeanings(e.target.checked)} /> Include meanings</label>
+              <label><input type="checkbox" id="includeMeanings" checked={includeDefinitions} onChange={(e) => setIncludeDefinitions(e.target.checked)} /> Include meanings</label>
             </div>
           </section>
 
@@ -323,11 +521,18 @@ const AppSang = () => {
                   <div key={item.id || item.word} className="search-result-item">
                     <div className="result-header">
                       <h3 style={{ margin: 0, color: "#2c3e50", cursor: "pointer" }} onClick={() => openDetail(item)}>{item.word}</h3>
-                      <span className="source-badge">{item.source === "decision-tree" ? "Decision Tree" : "Thủ công"}</span>
+                      <span className="source-badge">{item.source === "decision-tree" ? "Decision Tree" : " "}</span>
                     </div>
-                    <p style={{ margin: 0, color: "#555", lineHeight: 1.5 }}>{item.meaning || "Chưa có nghĩa"}</p>
+                    {item.context && item.context.length > 0 && (
+                      <div style={{ marginTop: 5, color: "#777", fontSize: 13 }}>
+                        <strong>Context:</strong>
+                        {item.context.map((c, i) => (
+                          <div key={i}>• {c}</div>
+                        ))}
+                      </div>
+                    )}
                     <div className="result-actions">
-                      <button onClick={() => openModalForWord(item)} className="btn-secondary">✏️ {item.meaning ? "Edit meaning" : "Add meaning"}</button>
+                      <button onClick={() => { console.log("EDIT CLICKED SEARCH", item); openModalForWord(item) }} className="btn-secondary">✏️ {item.definition ? "Edit definition" : "Add definition"}</button>
                       <button onClick={() => handleRemoveWord(item.word)} className="btn-danger">🗑️ Delete</button>
                     </div>
                   </div>
@@ -367,22 +572,22 @@ const AppSang = () => {
                 )}
 
                 {words.map((item) => {
-                  const hasMeaning = item.meaning && item.meaning.trim() !== "";
+                  const hasMeaning = item.definition && item.definition.trim() !== "";
                   return (
                     <div key={item.id || item.word} className="word-item">
                       <div style={{ flex: 1 }}>
                         <div style={{ display: "flex", alignItems: "center", marginBottom: 5 }}>
                           <div style={{ fontWeight: "bold", color: "#2c3e50", fontSize: 18, cursor: 'pointer' }} onClick={() => openDetail(item)}>{item.word}</div>
-                          <span className="source-badge">{item.source === "decision-tree" ? "Decision Tree" : "Thủ công"}</span>
+                          <span className="source-badge">{item.source === "decision-tree" ? "Decision Tree" : " "}</span>
                         </div>
                         <div style={{ fontSize: 12, color: "#7f8c8d" }}>
-                          {hasMeaning ? (<span className="status-badge status-has-meaning">✓ Đã có nghĩa</span>) : (<span className="status-badge status-no-meaning">✗ Chưa có nghĩa</span>)}
-                          {" • Thêm: "}{item.createdAt ? new Date(item.createdAt).toLocaleDateString("vi-VN") : "N/A"}
+                          {/*hasMeaning ? (<span className="status-badge status-has-meaning">✓ Đã có nghĩa</span>) : (<span className="status-badge status-no-meaning">✗ Chưa có nghĩa</span>)}
+                          {" • Thêm: "}{item.createdAt ? new Date(item.createdAt).toLocaleDateString("vi-VN") : "N/A"*/}
                         </div>
-                        {hasMeaning && (<div className="meaning-preview"><strong>Nghĩa:</strong> {item.meaning}</div>)}
+                        {hasMeaning && (<div className="meaning-preview"></div>)}
                       </div>
                       <div style={{ display: "flex", gap: 8 }}>
-                        <button onClick={() => openModalForWord(item)} className="btn-secondary">✏️ {hasMeaning ? "Edit" : "Add"}</button>
+                        <button onClick={() => openModalForWord(item)} className="btn-secondary">✏️ {hasMeaning ? "Edit" : "Edit"}</button>
                         <button onClick={() => handleRemoveWord(item.word)} className="btn-danger">🗑️</button>
                       </div>
                     </div>
@@ -400,10 +605,13 @@ const AppSang = () => {
           <div className="modal-content">
             <h4>Word details</h4>
             <div style={{ marginBottom: 10 }}><strong>Word:</strong> {currentWord.word}</div>
-            <div style={{ marginBottom: 10 }}><strong>Meaning:</strong> {currentWord.meaning || '—'}</div>
-            <div style={{ marginBottom: 10 }}><strong>Example:</strong> {currentWord.example || '—'}</div>
+            <div style={{ marginBottom: 10 }}><strong>Meaning:</strong> {currentWord.definition || '—'}</div>
+            <div style={{ marginBottom: 10 }}><strong>Context:</strong>    {currentWord.context?.length > 0
+              ? currentWord.context.map((c, i) => (<div key={i}>• {c}</div>))
+              : "—"}
+            </div>
             <div style={{ marginBottom: 10 }}><strong>Source:</strong> {currentWord.source || '—'}</div>
-            <div style={{ marginBottom: 10 }}><strong>Created:</strong> {currentWord.createdAt ? new Date(currentWord.createdAt).toLocaleString() : 'N/A'}</div>
+            <div style={{ marginBottom: 10 }}><strong>Metadata:</strong>  <pre>{JSON.stringify(currentWord.metadata, null, 2)}</pre></div>
             <div style={{ display: 'flex', gap: 8 }}>
               <button className="btn-secondary" onClick={() => { closeDetail(); openModalForWord(currentWord); }}>✏️ Edit</button>
               <button className="btn-secondary" onClick={closeDetail}>Close</button>
@@ -418,10 +626,10 @@ const AppSang = () => {
           <div className="modal-content">
             <h4>Add/Edit word meaning</h4>
             <input type="text" id="editWord" readOnly className="form-input" value={currentWord?.word || ""} />
-            <textarea id="editMeaning" placeholder={editMeaning ? `Edit meaning of word "${currentWord?.word}"...` : `Add meaning for word "${currentWord?.word}"...`} className="form-textarea" value={editMeaning} onChange={(e) => setEditMeaning(e.target.value)} />
+            <textarea id="editMeaning" placeholder={editDefinition ? `Edit definition of word "${currentWord?.word}"...` : `Add definition for word "${currentWord?.word}"...`} className="form-textarea" value={editDefinition} onChange={(e) => setEditDefinition(e.target.value)} />
             <div className="modal-buttons">
               <button id="cancelEdit" className="btn-secondary" onClick={closeModal}>Hủy</button>
-              <button id="saveMeaning" className="btn-primary" onClick={handleSaveMeaning}>Lưu</button>
+              <button id="saveMeaning" className="btn-primary" onClick={handleSaveDefinition}>Lưu</button>
             </div>
           </div>
         </div>

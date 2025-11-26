@@ -394,6 +394,12 @@ h3 {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 9999;
 }
+#editModal.modal-show {
+  display: flex; /* hoặc block */
+  align-items: center;
+  justify-content: center;
+}
+
 
 #editModal .modal-content {
     position: absolute;
@@ -444,6 +450,22 @@ h3 {
     gap: 10px;
     justify-content: flex-end;
 }
+
+#detailModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 9999;
+}
+
+#detailModal.modal-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* =======================
    Memory Stats
