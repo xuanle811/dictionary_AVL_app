@@ -270,16 +270,16 @@ def save_terms(terms, index_path="ResultTerms/terms_index.json", info_path="Resu
             term_to_offset[term] = offset
             offset += 1
 
-    # Lưu lại
-    with open(index_path, "w", encoding="utf-8") as f:
-        json.dump(old_index, f, ensure_ascii=False, indent=2)
+    # # Lưu lại
+    # with open(index_path, "w", encoding="utf-8") as f:
+    #     json.dump(old_index, f, ensure_ascii=False, indent=2)
 
     with open(info_path, "w", encoding="utf-8") as f:
         json.dump(old_info, f, ensure_ascii=False, indent=2)
 
     print("Updated JSON with new + merged terms")
 
-    return old_index
+    return old_index, old_info
 
 
 
@@ -305,14 +305,14 @@ def process_multi_pdfs(file_paths, dictpath='data/dict.json'):
     # Chuyển dict thành list tuple [(term, definition, context), ...]
     final_terms = [(t, v["definition"], v["context"]) for t, v in merged_terms.items()]
 
-    # Gọi save_terms như trước (incremental merge với JSON cũ)
-    terms_index = save_terms(
-        final_terms,
-        index_path="ResultTerms/terms_index.json",
-        info_path="ResultTerms/terms_info.json"
-    )
+    # # Gọi save_terms như trước (incremental merge với JSON cũ)
+    # terms_index, terms_info = save_terms(
+    #     final_terms,
+    #     index_path="ResultTerms/terms_index.json",
+    #     info_path="ResultTerms/terms_info.json"
+    # )
 
-    return terms_index
+    return final_terms
 
 def process_multi_pdfs_folder(folder_path, dictpath='data/dict.json'):
     pdf_files = [
@@ -325,4 +325,4 @@ def process_multi_pdfs_folder(folder_path, dictpath='data/dict.json'):
 
 index_terms = process_multi_pdfs_folder("data")
 print("Số thuật ngữ tìm được:", len(index_terms))
-# print("Một số ví dụ:", index_terms)
+print("Một số ví dụ:", index_terms)

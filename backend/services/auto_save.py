@@ -1,7 +1,7 @@
 import json
 from services.tree_binary import save_avl
 
-
+# tự động lưu lại
 def auto_save(root, terms_info,
               info_path="data/terms_info.json",
               bin_path="data/avl.bin"):

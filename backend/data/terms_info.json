@@ -1,300 +1,15 @@
 [
   {
-    "offset": 0,
-    "definition": "In software engineering, a software development process is the process of dividing software development work into distinct phases to improve design, product management, and project management. It is also known as a software development life cycle (SDLC). The methodology may include the pre-definition of specific deliverables and artifacts that are created and completed by a project team to develop or maintain an application.[150]",
-    "context": [
-      "In this paper we also explain AVL tree concept, deal with educational games, describe our game design \nand methodology and report the first test results.",
-      "As there is no widespread training of teachers regarding \nthe use of digital games in the classroom, we have developed a methodology for using our game in a university course.",
-      "The proposed method\nThis article’s overall objective is to present a methodology for constructing knockoff\nmodels derived from black-box neural models tailored for text sentiment analysis."
-    ],
-    "metadata": {}
-  },
-  {
     "offset": 1,
-    "definition": "Is a basic unit of a data structure, such as a linked list or tree data structure. Nodes contain data and also may link to other nodes. Links between nodes are often implemented by pointers.",
-    "context": [
-      "Since there are still very few good-quality educational \ngames, we have decided to design, implement and test our own mobile game for teaching the algorithm of inserting new nodes to an AVL tree.",
-      "In addition to the basic criterion of the binary \nsearch tree (for each node N holds, that all values stored in \nits left sub-tree are less than the value stored in N, and all values in its right sub-tree ar e greater than the value in N), \nalso the balance criterion applies in an AVL tree: for each \nnode, the difference of the height s of its two sub-trees is at most one.",
-      "Tree nodes \ncontain words and their part of speech (POS) tags.",
-      "| HL – HR | <= 1                                    (1) \n \nNode insertion and deletion operations can have O(N) \nworst-case efficiency, where N is the number of tree nodes ."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 2,
-    "definition": "A formal language, which comprises a set of instructions that produce various kinds of output. Programming languages are used in computer programming to implement algorithms.",
-    "context": [
-      "In the first approa ch, pupils and students learn \ncontent while developing a game, mostly learning \nprogramming languages and training for problem solving."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 3,
-    "definition": "The theory, experimentation, and engineering that form the basis for the design and use of computers. It involves the study of algorithms that process, store, and communicate digital information. A computer scientist specializes in the theory of computation and the design of",
-    "context": [
-      "A Mobile Game to Teach AVL Trees \n \nD. Šuníková*, Z.Kubincová* and M. Byrtus \n* Comenius University in Bratislava, Faculty of Math ematics, Physics and Informatics, Bratislava, Slovakia \ndana.sunikova@gmail.com \nkubincova@fmph.uniba.sk \nmirobyrtus@gmail.com \n \nAbstract —Data structures and algorithms represent an \nimportant area of computer science.",
-      "INTRODUCTION  \nBehind the idea of creating AVL Trees game was \na desire to create one's own game available to the widest \naudience which would be different from the current games \non the market, as well as the need to provide students with computer science concepts in a simple way.",
-      "Email: congpx@gmail.com\nTrung Nguyen Hoang is a fourth-year student majoring in Computer Science at Le Quy Don\nTechnical University.",
-      "Email: nguyenhtmta02@gmail.com\nCao Truong Tran received the PhD degree in computer science from Victoria University of\nWellington, New Zealand."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 4,
     "definition": "A data organization, management, and storage format that enables efficient access and modification.[94][95][96] More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.[97]",
     "context": [
-      "A Mobile Game to Teach AVL Trees \n \nD. Šuníková*, Z.Kubincová* and M. Byrtus \n* Comenius University in Bratislava, Faculty of Math ematics, Physics and Informatics, Bratislava, Slovakia \ndana.sunikova@gmail.com \nkubincova@fmph.uniba.sk \nmirobyrtus@gmail.com \n \nAbstract —Data structures and algorithms represent an \nimportant area of computer science.",
-      "After reviewing the options, we have chosen AVL trees \nas a topic and designed a mobile logic game to work with this data structure.",
       "AVL tree data structure is cre ated \nby mathematicians Adelson-Velskii and Landis [7].",
       "A. Forouzan: Data Structures: A \nPseudocode Approach With C,  Course Technology Press, \n1998."
     ],
     "metadata": {}
   },
   {
-    "offset": 5,
-    "definition": "An abstract data type that represents a countable number of ordered values, where the same value may occur more than once. An instance of a list is a computer representation of the mathematical concept of a finite sequence; the (potentially) infinite analog of a list is a stream.[140]: §3.5 Lists are a basic example of containers, as they contain other values. If the same value occurs multiple times, each occurrence is considered a distinct item.",
-    "context": [
-      "[5], in which a player runs while listening \nto a story put into a world where monsters are hunting her.",
-      "Each game instance in all three levels starts with an \nempty tree and a list of nodes that the user needs to add to the tree.",
-      "Imposing that limitation \nmakes the search efficiency logarithmic, O (log zn), in comparison to the linear lists, which have linear search  \nefficiency O(n).",
-      "The input to the \nCroatian Morphological Lexicon is a limited number of \nwords and the output is a list of these words with their POS \ntags."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 6,
-    "definition": "Data that has several parts, known as a record, can be divided into fields. Relational databases arrange data as sets of database records, so called rows. Each record consists of several fields; the fields of all records form the columns. Examples of fields: name, gender, hair colour.",
-    "context": [
-      "Also, a lot of research was done in the field of \ngamification in education in the past few years.",
-      "We described the design choices we made with \nregard to the up to date literature from the fields of game-based learning and gamification.",
-      "Recent publications have often concentrated on the\nfield of computer vision; in contrast, there is still relatively little research on methods for\nattacking black box models with textual data.",
-      "01, June-2024\nBlack-box neural models utilized for text sentiment analysis can also be susceptible\nto function stealing, similar to the broader field of NLP, which has seen limited research\non this topic."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 7,
-    "definition": "The stage of a genetic algorithm in which individual genomes are chosen from a population for later breeding (using the crossover operator).",
-    "context": [
-      "(a) Home screen,  (b) Selection of game instances formulation, testing, and revision facilitated by an instant \nfeedback comes up during the interaction with the game, \nand others [4].",
-      "For instance, [4] proposed random or adaptive data selection strategies, while [15]\nsuggested building a prediction army to guide the next choice.",
-      "[16] also explored sample\nselection options such as uncertainty strategy, k-center algorithm, or DeepFool-based\nactive learning, showing promising results in image classification problems."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 8,
-    "definition": "In computer programming, a subroutine is a sequence of program instructions that performs a specific task, packaged as a unit. This unit can then be used in programs wherever that particular task should be performed. Subroutines may be defined within programs, or separately in libraries that can be used by many programs. In different programming languages, a subroutine may be called a routine, subprogram, function, method, or procedure. Technically, these terms all have different definitions. The generic, umbrella term callable unit is sometimes",
-    "context": [
-      "Procedure \nDuring the practice, the teacher shortly repeated the \ntheory of AVL trees and how the insert operation works.",
-      "The input to the building \nprocedure is a number of Croatian technical texts f rom a \nrestricted domain.",
-      "Technical \nterms dictionary building for different constrained domains \nis a complex procedure that requires expert engagement \nand close collaboration with linguists."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 9,
-    "definition": "Is an abstract data type that can store unique values, without any particular order. It is a computer implementation of the mathematical concept of a finite set. Unlike most other collection types, rather than retrieving a specific element from a set, one typically tests a value for membership in a set.",
-    "context": [
-      "The story and the music are set in a way which keeps the runner at the right speed at the right intervals.",
-      "In the future, \nwe want to add player levels  so that the user initially \nchooses whether she is a beginner, an advanced user or an \nexpert, and hence will have the time set for the individual actions according to the chosen player level.",
-      "This is a part of the AVL dictionary word list with its \nPOS tags:  \nInverzno -A \nKod -N \nLoša -A \nPC -N \nPrednosti -N \nSetTimer -N \nTakav -P \nTakođer -C \nTo -P \nVrlo -A \nWindowsi -N \nakvizicijska -A \nali -C \nautomatizirane -A \nbi -V \nbiti -V \nbroj -N \ndebugati -V \ndobije -V \ndobiti -V \ndobiveni –A \ndodatno -A \ndotičnim -A \ndovoljno -A \n \nThe syntactic patterns for English proposed by different \nauthors are shown in the following list [6]: \n \n1.",
-      "This evaluation may involve comparing\nthe outputs of the knockoff model with those of the target model on a separate test\ndataset [8], [9].",
-      "In a white-box attack, the attacker has ex-\ntensive knowledge of the model, including its structure, parameters, and training dataset."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 10,
-    "definition": "In mathematics, a sequence is an enumerated collection of objects in which repetitions are allowed and order does matter. Like a set, it contains members (also called elements, or terms). The number of elements (possibly infinite) is called the length of the sequence. Unlike a set, the same elements can appear multiple times at different positions in a sequence, and order does matter. Formally, a sequence can be defined as a function whose domain is either the set of the natural numbers (for infinite sequences) or the set of the first n natural numbers (for a sequence of finite length n). The position of an element in a sequence is its rank or index; it is the natural number for which the element is the image. The first element has index 0 or 1, depending on the context or a specific convention. When a symbol is used to denote a sequence, the nth element of the sequence is denoted by this symbol with n as subscript; for example, the nth element of the Fibonacci sequence F is generally denoted F . For example, (M, A, R, Y) is a sequence of letters with the letter 'M' first and 'Y' last. This sequence differs from (A, R, M, Y). Also, the sequence (1, 1, 2, 3, 5, 8), which contains the number 1 at two different positions, is a valid sequence. Sequences can be finite, as in these examples, or infinite, such as the sequence of all even positive integers (2, 4, 6, ...). In computing and computer science, finite sequences are sometimes called strings, words or lists, the different names commonly corresponding to different ways to represent them in computer memory; infinite sequences are called streams. The empty sequence ( ) is included in most notions of sequence, but may be excluded depending on the context.",
-    "context": [
-      "When deciding on the consequences of bad action, we \nalso looked at the variants  in which either the game \ncorrectly inserts the node fo r the user (and a life will be \nlost) or the user inserts a different node afterwards.",
-      "Problem arises as a consequence of Croatian language \ncomplexity and specificity regarding language inflexions \nand free word order [9, 10, 11, 1z, 13].",
-      "Transformers, such as BERT (Bidirectional Encoder Repre-\nsentations from Transformers), have achieved state-of-the-art performance by leveraging\nself-attention mechanisms to capture contextual information from text sequences [22]."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 11,
-    "definition": "An action or occurrence recognized by software, often originating asynchronously from the external environment, that may be handled by the software. Because an event is an entity which encapsulates the action and the contextual variables triggering the action, the acrostic mnemonic \"Execution Variable Encapsulating Named Trigger\" is often used to clarify the concept.",
-    "context": [
-      "It \ncombines online and offline activities within a webpage, \nsocial network and several offline events.",
-      "Otvorená hra [8] aims to teach adults communication skills through gamified online courses and several offline events."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 12,
-    "definition": "Is a person who utilizes a computer or network service. Users of computer systems and software products generally lack the technical expertise required to fully understand how they work.[242] Power users use advanced features of programs, though they are not necessarily capable of computer programming and system administration.",
-    "context": [
-      "Games are based on the fact that the user has to \ndiscover a pattern and learn it [1].",
-      "AVL\n TREES GAME DESIGN  \nWe have decided to use the benefit of games – teaching \nskills and knowledge – and create a game for users who need to learn the AVL insertion algorithm.",
-      "The user has r equest ed enhanc ement of the do wnlo aded file.",
-      "User interface with application controls can be see n in \nFig.",
-      "As a result, we have seen a growing number of companies integrating neural models\ninto their products and services, recognizing the immense potential of AI technologies\nto drive efficiency and enhance user experiences.",
-      "Moreover, sentiment analysis plays a vital role in various domains, including\nmarketing, customer service, and social media monitoring, where understanding the\nsentiment of users’ feedback is essential for maintaining customer satisfaction and\nmanaging brand reputation [6], [7]."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 13,
-    "definition": "A device that can be instructed to carry out sequences of arithmetic or logical operations automatically via computer programming. Modern computers have the ability to follow generalized sets of operations, called programs. These programs enable computers to perform an extremely wide range of tasks.",
-    "context": [
-      "A Mobile Game to Teach AVL Trees \n \nD. Šuníková*, Z.Kubincová* and M. Byrtus \n* Comenius University in Bratislava, Faculty of Math ematics, Physics and Informatics, Bratislava, Slovakia \ndana.sunikova@gmail.com \nkubincova@fmph.uniba.sk \nmirobyrtus@gmail.com \n \nAbstract —Data structures and algorithms represent an \nimportant area of computer science.",
-      "INTRODUCTION  \nBehind the idea of creating AVL Trees game was \na desire to create one's own game available to the widest \naudience which would be different from the current games \non the market, as well as the need to provide students with computer science concepts in a simple way.",
-      "[4] A-C. N. Ngomo, SIGNUM: A Graph Algorithm for \nTerminology Extraction, Computational Linguistics a nd \nIntelligent Text Processing , Lecture Notes in Computer \nScience, pages 85-95, z008.",
-      "Recent publications have often concentrated on the\nfield of computer vision; in contrast, there is still relatively little research on methods for\nattacking black box models with textual data.",
-      "In recent years, there has been a considerable amount of research focusing on the vul-\nnerability of black-box neural models in computer vision tasks, particularly in the context\nof stealing functions."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 14,
-    "definition": "A unit of information that roughly corresponds to a grapheme, grapheme-like unit, or symbol, such as in an alphabet or syllabary in the written form of a natural language.[42] CI/CD See: continuous integration (CI) / continuous delivery (CD).",
-    "context": [
-      "The game always takes \nplace in a space which can be, for example, a map where \ncharacters move in an online game, or a grid, a chessboard, etc.",
-      "Project Chymeros [7] aims to teach children and teenagers creativity, language literacy, reading skills and many more by following and \nparticipating in a tale of a young book character."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 15,
-    "definition": "An unambiguous specification of how to solve a class of problems. Algorithms can perform calculation, data processing, and automated reasoning tasks. They are ubiquitous in computing technologies.",
-    "context": [
-      "A Mobile Game to Teach AVL Trees \n \nD. Šuníková*, Z.Kubincová* and M. Byrtus \n* Comenius University in Bratislava, Faculty of Math ematics, Physics and Informatics, Bratislava, Slovakia \ndana.sunikova@gmail.com \nkubincova@fmph.uniba.sk \nmirobyrtus@gmail.com \n \nAbstract —Data structures and algorithms represent an \nimportant area of computer science.",
-      "Since there are still very few good-quality educational \ngames, we have decided to design, implement and test our own mobile game for teaching the algorithm of inserting new nodes to an AVL tree.",
-      "[4] A-C. N. Ngomo, SIGNUM: A Graph Algorithm for \nTerminology Extraction, Computational Linguistics a nd \nIntelligent Text Processing , Lecture Notes in Computer \nScience, pages 85-95, z008.",
-      "These neural models, powered by\nadvanced algorithms and data-driven insights, have become indispensable tools for\nbusinesses looking to stay competitive in today’s rapidly evolving market.",
-      "Nonetheless, this framework enables\na worst-case assessment of learning algorithm security, providing empirical upper limits\non potential performance degradation under attack."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 16,
-    "definition": "The global system of interconnected computer networks that use the Internet protocol suite (TCP/IP) to link devices worldwide. It is a network of networks that consists of private, public, academic, business, and government networks of local to global scope, linked by a broad array of electronic, wireless, and optical networking technologies.",
-    "context": [
-      "It is an \ninternet portal where articles on \"meaningful games and technologies that deserve the attention of parents, teachers and all who meet young players\" are regularly published."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 17,
-    "definition": "A computer that provides information to other computers called \"clients\" on a computer network.[200] This architecture is called the client–server model.",
-    "context": [
-      "R\nESULTS  \nDuring the testing of our mobile game we served as a \nlecturer and as an observer as well.",
-      "[8] M. Tadić, “Croatian lemmatization server,” in P roc."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 18,
-    "definition": "In computer networks, to receive data from a remote system, typically a server [105] such as a web server, an FTP server, an email server, or other similar systems. This contrasts with uploading, where data is sent to a remote server. A download is a file offered for downloading or that has been downloaded, or the process of receiving such a file. E",
-    "context": [
-      "Downloaded on September 21,2025 at 09:54:54 UTC from IEEE Xplore.",
-      "Downloaded on September 21,2025 at 09:54:54 UTC from IEEE Xplore."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 19,
-    "definition": "In object-oriented programming, an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).[43][44] In many languages, the class name is used as the name for the class (the template itself), the name for the default constructor of the class (a subroutine that creates objects), and as the type of objects generated by instantiating the class; these distinct",
-    "context": [
-      "There are three main approaches to introducing computer games into classes [4].",
-      "In spite of the obvious obstacles to the introduction of \ndigital games into the classroom teaching – which, \napparently, stems in particular  from the fact that there is \nstill much to explore in this area – games can be considered educational tools.",
-      "Index terms\nText classification, text sentiment, black-box model stealing, knockoff model.",
-      "[16] also explored sample\nselection options such as uncertainty strategy, k-center algorithm, or DeepFool-based\nactive learning, showing promising results in image classification problems."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 20,
-    "definition": "Any type of calculation[53][54] that includes both arithmetical and non-arithmetical steps and follows a well-defined model, e.g. an algorithm. The study of computation is paramount to the discipline of computer science.",
-    "context": [
-      "Prentice-Hall \nSeries in Automatic Computation.",
-      "[4] A-C. N. Ngomo, SIGNUM: A Graph Algorithm for \nTerminology Extraction, Computational Linguistics a nd \nIntelligent Text Processing , Lecture Notes in Computer \nScience, pages 85-95, z008.",
-      "This\ntransfer of knowledge enables the student model to effectively capture the underlying\npatterns and nuances present in the data, albeit with reduced computational resources.",
-      "Through this approach, practitioners can strike a\nbalance between model complexity and computational overhead, thereby facilitating the\ndeployment of more streamlined and scalable machine learning solutions [17]–[19]."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 21,
-    "definition": "A tree data structure in which each node has at most two children, which are referred to as the left child and the right child. A recursive definition using just set theory notions is that a (non- empty) binary tree is a tuple (L, S, R), where L and R are binary trees or the empty set and S is a singleton set.[29] Some authors allow the binary tree to be the empty set as well.[30]",
-    "context": [
-      "As we wanted this game to be distinct from the others available on the market, we chose \na different space - binary trees.",
-      "The dictionary is implemented as  an AVL \ntree, a binary tree which ensures performance of op erations \nsuch as insertion and retrieval in logarithmic time .",
-      "Our dictionary is based on an AVL tree, a balanced \nbinary tree structure named after its authors, G. M. \nAdelson-Velskii and E.M. Landis [7]."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 22,
-    "definition": "In object-oriented programming (OOP), a procedure associated with a message and an object. An object consists of data and behavior. The data and behavior comprise an interface, which specifies how the object may be utilized by any of various consumers[149] of the object.",
-    "context": [
-      "In this paper we also explain AVL tree concept, deal with educational games, describe our game design \nand methodology and report the first test results.",
-      "As there is no widespread training of teachers regarding \nthe use of digital games in the classroom, we have developed a methodology for using our game in a university course.",
-      "There are only few \napplications and methods developed for machine \nprocessing of Croatian language texts.",
-      "V. APPLICATION DESCRIPTION \n \nThe tool being developed for text processing \nincorporates a fusion of linguistic knowledge and corpora \nmethods.",
-      "Recent publications have often concentrated on the\nfield of computer vision; in contrast, there is still relatively little research on methods for\nattacking black box models with textual data.",
-      "This article introduces a research method for\nextracting the functionality of a black box model in the task of text sentiment analysis."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 23,
-    "definition": "A widely used abstract data type (ADT) that simulates a hierarchical tree structure, with a root value and subtrees of children with a parent node, represented as a set of linked nodes.",
-    "context": [
-      "A Mobile Game to Teach AVL Trees \n \nD. Šuníková*, Z.Kubincová* and M. Byrtus \n* Comenius University in Bratislava, Faculty of Math ematics, Physics and Informatics, Bratislava, Slovakia \ndana.sunikova@gmail.com \nkubincova@fmph.uniba.sk \nmirobyrtus@gmail.com \n \nAbstract —Data structures and algorithms represent an \nimportant area of computer science.",
-      "Since there are still very few good-quality educational \ngames, we have decided to design, implement and test our own mobile game for teaching the algorithm of inserting new nodes to an AVL tree.",
-      "Automatic Building of a Dictionary of Technical Ter ms and Collocations \n Based on AVL Tree  \n \nDavor Blažeković, Maja Matetić and Marija Brkić  \nDepartment of Informatics \nUniversity of Rijeka \nOmladinska 14, 51000 Rijeka, Croatia   \nPhone: (+385) 91 503 13z7 E-mail: davor.blazekovic@ri.t-com.hr , majam@inf.uniri.hr , mbrkic@inf.uniri.hr  \n \n \n \nAbstract - The aim of this work is automatic buildi ng of a \ndictionary of technical collocations.",
-      "The dictionary is implemented as  an AVL \ntree, a binary tree which ensures performance of op erations \nsuch as insertion and retrieval in logarithmic time .",
-      "It was parsed with the\nStanford parser and includes a total of 215,154 unique phrases\nfrom those parse trees, each annotated by 3 human judges.",
-      "[27] R. Socher, A. Perelygin, J. Wu, ..., and C. Potts, “Recursive deep models for semantic compositionality over\na sentiment treebank,” in Proceedings of the 2013 conference on empirical methods in natural language\nprocessing ."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 24,
-    "definition": "Is the targeted subject area of a computer program. It is a term used in software engineering. Formally it represents the target subject of a specific programming project, whether narrowly or",
-    "context": [
-      "The input to the building \nprocedure is a number of Croatian technical texts f rom a \nrestricted domain.",
-      "Technical \nterms dictionary building for different constrained domains \nis a complex procedure that requires expert engagement \nand close collaboration with linguists.",
-      "Moreover, sentiment analysis plays a vital role in various domains, including\nmarketing, customer service, and social media monitoring, where understanding the\nsentiment of users’ feedback is essential for maintaining customer satisfaction and\nmanaging brand reputation [6], [7]."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 25,
-    "definition": "A basic unit of information used in computing and digital communications; a portmanteau of binary digit. A binary digit can have one of two possible values, and may be physically represented with a two-state device. These state values are most commonly represented as",
-    "context": [
-      "Here is an example showing a part of the \ndescribed procedure results: \n \nKod -0                                Kod -N \nLoša -0                               Loša -A \nPrednosti -0  Prednosti -N \nTakav -0     Takav -P \nTakođer -C  Također -C \nTo -0   To -P \nVrlo -0   Vrlo -A \nakvizicijska -0  akvizicijska -A \nali -0   ali -C \nautomatizirane -0  automatizirane -A \nbi -0   bi -V \nbiti -V   biti -V \nbroj -N   broj -N \ndobije -0   dobije -V \ndobiti -0   dobiti -V \ndobiveni -A  dobiveni -A \ndodatno -0   dodatno -A \n \nPokreni (Start) – button which activates technical terms \nand collocations search.",
-      "This is a part of the AVL dictionary word list with its \nPOS tags:  \nInverzno -A \nKod -N \nLoša -A \nPC -N \nPrednosti -N \nSetTimer -N \nTakav -P \nTakođer -C \nTo -P \nVrlo -A \nWindowsi -N \nakvizicijska -A \nali -C \nautomatizirane -A \nbi -V \nbiti -V \nbroj -N \ndebugati -V \ndobije -V \ndobiti -V \ndobiveni –A \ndodatno -A \ndotičnim -A \ndovoljno -A \n \nThe syntactic patterns for English proposed by different \nauthors are shown in the following list [6]: \n \n1.",
-      "Subsequently, FAundergoes a training process utilizing the input-output pairs\nfrom XA, aiming to capture the underlying patterns and decision-making processes\nexhibited by the victim model.",
-      "2(b), representing models\nusing feature extraction from Roberta, the KD-case scenario (first leftmost blue column)\nexhibits the best performance with an F1-score of 94.46%, closely approaching the\nvictim’s F1-score (94.92%) with an Agreement of 96.82%."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 26,
-    "definition": "Is any goal-oriented activity requiring, benefiting from, or creating computing machinery. It includes study of algorithmic processes and development of both hardware and software. It has scientific, engineering, mathematical, technological and social aspects. Major computing fields include computer engineering, computer science, cybersecurity, data science, information systems, information technology and software engineering.[73]",
-    "context": [
-      "[3] A-C. N. Ngomo, \"Knowledge-free discovery of dom ain-\nspecific multiword units\", in Proceedings of the z0 08 ACM \nsymposium on Applied computing, pages 1561-1565, \nFortaleza, Ceara, Brazil, z008.",
-      "References\n[1] W. Liu, Z. Wang, X. Liu, ..., and F. E. Alsaadi, “A survey of deep neural network architectures and their\napplications,” Neurocomputing , vol.",
-      "11–26, 2017. doi: 10.1016/j.neucom.2016.12.038\n[2] P. P. Shinde and S. Shah, “A review of machine learning and deep learning applications,” in 2018 Fourth\ninternational conference on computing communication control and automation (ICCUBEA) ."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 27,
-    "definition": "Is a value that enables a program to indirectly access a particular datum, such as a variable's value or a record, in the computer's memory or in some other storage device. The reference is said to refer to the datum, and accessing the datum is called dereferencing the reference.",
-    "context": [
-      "REFERENCES \n \n[1] P. Pecina, \"A Machine Learning Approach to Mult iword \nExpression Extraction\", In Proceedings of the LREC z008 \nWorkshop Towards a Shared Task for Multiword Expres sions \n(MWE z008), Marrakech, Morocco, May z008.",
-      "References\n[1] W. Liu, Z. Wang, X. Liu, ..., and F. E. Alsaadi, “A survey of deep neural network architectures and their\napplications,” Neurocomputing , vol."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 28,
+    "offset": 2,
     "definition": "A shared boundary across which two or more separate components of a computer system exchange information. The exchange can be between software, computer hardware, peripheral devices, humans, and combinations of these.[131] Some computer hardware devices, such as a touchscreen, can both send and receive data through the interface, while others such as a mouse or microphone may only provide an interface to send data to a given system.[132]",
     "context": [
       "User interface with application controls can be see n in \nFig.",
@@ -303,45 +18,26 @@
     "metadata": {}
   },
   {
-    "offset": 29,
-    "definition": "In a programming language, a combination of one or more constants, variables, operators, and functions that the programming language interprets (according to its particular rules of precedence and of association) and computes to produce (\"to return\", in a stateful environment) another value. This process, as for mathematical expressions, is called evaluation. F",
+    "offset": 4,
+    "definition": "A tree data structure in which each node has at most two children, which are referred to as the left child and the right child. A recursive definition using just set theory notions is that a (non- empty) binary tree is a tuple (L, S, R), where L and R are binary trees or the empty set and S is a singleton set.[29] Some authors allow the binary tree to be the empty set as well.[30]",
     "context": [
-      "In our approach we use the \nsyntactic preprocessing of texts in order to better identi fy \ncandidate expressions.",
-      "REFERENCES \n \n[1] P. Pecina, \"A Machine Learning Approach to Mult iword \nExpression Extraction\", In Proceedings of the LREC z008 \nWorkshop Towards a Shared Task for Multiword Expres sions \n(MWE z008), Marrakech, Morocco, May z008.",
-      "This ability to capture context at scale has significantly improved sentiment\nanalysis tasks, enabling models to better understand the nuances and subtleties of human\nlanguage and sentiment expression [22].",
-      "These samples are carefully chosen to represent a diverse range of textual\ninputs, encompassing various linguistic styles, topics, and sentiment expressions."
+      "The dictionary is implemented as  an AVL \ntree, a binary tree which ensures performance of op erations \nsuch as insertion and retrieval in logarithmic time .",
+      "Our dictionary is based on an AVL tree, a balanced \nbinary tree structure named after its authors, G. M. \nAdelson-Velskii and E.M. Landis [7].",
+      "[4] A-C. N. Ngomo, SIGNUM: A Graph Algorithm for \nTerminology Extraction, Computational Linguistics a nd \nIntelligent Text Processing , Lecture Notes in Computer \nScience, pages 85-95, z008."
     ],
     "metadata": {}
   },
   {
-    "offset": 30,
-    "definition": "In information technology and computer science, a system is described as stateful if it is designed to remember preceding events or user interactions;[219] the remembered information is called the state of the system.",
+    "offset": 5,
+    "definition": "An abstract data type that represents a countable number of ordered values, where the same value may occur more than once. An instance of a list is a computer representation of the mathematical concept of a finite sequence; the (potentially) infinite analog of a list is a stream.[140]: §3.5 Lists are a basic example of containers, as they contain other values. If the same value occurs multiple times, each occurrence is considered a distinct item.",
     "context": [
-      "The state of t he \nart shows that there is interest in statistical [1, z] , \nunsupervised machine learning [3, 4], and syntactic \napproaches [5] to the problem.",
-      "Transformers, such as BERT (Bidirectional Encoder Repre-\nsentations from Transformers), have achieved state-of-the-art performance by leveraging\nself-attention mechanisms to capture contextual information from text sequences [22]."
+      "Imposing that limitation \nmakes the search efficiency logarithmic, O (log zn), in comparison to the linear lists, which have linear search  \nefficiency O(n).",
+      "The input to the \nCroatian Morphological Lexicon is a limited number of \nwords and the output is a list of these words with their POS \ntags."
     ],
     "metadata": {}
   },
   {
-    "offset": 31,
-    "definition": "The syntax of a computer language is the set of rules that defines the combinations of symbols that are considered to be correctly structured statements or expressions in that language. This applies both to programming languages, where the document represents source code, and to markup languages, where the document represents data.",
-    "context": [
-      "If the document specific dictionary is \navailable apriori, the generation of a target language \ndocument from a source language document essentially \nreduces to syntax planning and morphology processing for \nthe pair of languages involved."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 32,
-    "definition": "An interdisciplinary field concerned with the statistical or rule-based modeling of natural language from a computational perspective, as well as the study of appropriate computational approaches to linguistic questions.",
-    "context": [
-      "[4] A-C. N. Ngomo, SIGNUM: A Graph Algorithm for \nTerminology Extraction, Computational Linguistics a nd \nIntelligent Text Processing , Lecture Notes in Computer \nScience, pages 85-95, z008.",
-      "32, 2019. doi: 10.48550/arXiv.1906.08237\n[26] A. Maas, R. E. Daly, P. T. Pham, ..., and C. Potts, “Learning word vectors for sentiment analysis,” in Proceedings\nof the 49th annual meeting of the association for computational linguistics: Human language technologies , 2011,\npp.",
-      "Seattle, Washington, USA: Association for Computational Linguistics, Oct. 2013, pp."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 33,
+    "offset": 6,
     "definition": "A method for finding an element within a list. It sequentially checks each element of the list until",
     "context": [
       "Imposing that limitation \nmakes the search efficiency logarithmic, O (log zn), in comparison to the linear lists, which have linear search  \nefficiency O(n)."
@@ -349,49 +45,33 @@
     "metadata": {}
   },
   {
-    "offset": 34,
-    "definition": "An artificial intelligence data structure used to divide knowledge into substructures by representing \"stereotyped situations\". Frames are the primary data structure used in artificial intelligence frame language.",
+    "offset": 7,
+    "definition": "A computer that provides information to other computers called \"clients\" on a computer network.[200] This architecture is called the client–server model.",
     "context": [
-      "Nonetheless, this framework enables\na worst-case assessment of learning algorithm security, providing empirical upper limits\non potential performance degradation under attack.",
-      "TWEET 3 59,900 45,600 12,300Twitter consists of 7 heterogenous tasks in Twitter, all framed\nas multiclass tweet classification."
+      "[8] M. Tadić, “Croatian lemmatization server,” in P roc."
     ],
     "metadata": {}
   },
   {
-    "offset": 35,
-    "definition": "LoRA stands for Low-Rank Adaptation. It is a method used to fine-tune large models by updating only a small, targeted part of the model. This makes it quicker and less resource- intensive to adapt the model to specific tasks or new datasets. M",
+    "offset": 8,
+    "definition": "In computer programming, a subroutine is a sequence of program instructions that performs a specific task, packaged as a unit. This unit can then be used in programs wherever that particular task should be performed. Subroutines may be defined within programs, or separately in libraries that can be used by many programs. In different programming languages, a subroutine may be called a routine, subprogram, function, method, or procedure. Technically, these terms all have different definitions. The generic, umbrella term callable unit is sometimes",
     "context": [
-      "Therefore, there is a\npressing need for further research and exploration into the vulnerabilities of black-box\nneural models in NLP tasks, as well as the development of effective countermeasures\nto mitigate potential risks."
+      "The input to the building \nprocedure is a number of Croatian technical texts f rom a \nrestricted domain.",
+      "Technical \nterms dictionary building for different constrained domains \nis a complex procedure that requires expert engagement \nand close collaboration with linguists."
     ],
     "metadata": {}
   },
   {
-    "offset": 36,
-    "definition": "Machine learning-based attention is a mechanism mimicking cognitive attention. It calculates \"soft\" weights for each word, more precisely for its embedding, in the context window. It can do it either in parallel (such as in transformers) or sequentially (such as in recursive neural networks). \"Soft\" weights can change during each runtime, in contrast to \"hard\" weights, which are (pre-)trained and fine-tuned and remain frozen afterwards. Multiple attention heads are used in transformer-based large language models.",
+    "offset": 9,
+    "definition": "Is a basic unit of a data structure, such as a linked list or tree data structure. Nodes contain data and also may link to other nodes. Links between nodes are often implemented by pointers.",
     "context": [
-      "Transformers, such as BERT (Bidirectional Encoder Repre-\nsentations from Transformers), have achieved state-of-the-art performance by leveraging\nself-attention mechanisms to capture contextual information from text sequences [22]."
+      "Tree nodes \ncontain words and their part of speech (POS) tags.",
+      "| HL – HR | <= 1                                    (1) \n \nNode insertion and deletion operations can have O(N) \nworst-case efficiency, where N is the number of tree nodes ."
     ],
     "metadata": {}
   },
   {
-    "offset": 37,
-    "definition": "A parameter that can be set in order to define any configurable part of a machine learning model's learning process.",
-    "context": [
-      "Therefore, intrinsic information about the model\n(such as architecture, hyperparameters, and training data) needs to be kept confidential."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 38,
-    "definition": "The process of transferring knowledge from a large machine learning model to a smaller one.",
-    "context": [
-      "Knowledge distillation\nKnowledge distillation, a widely-used technique in machine learning, involves training\na smaller model, termed the student model, to emulate the intricate behavior of a larger,\nmore complex model known as the teacher model.",
-      "The ultimate objective of knowledge distillation is to leverage the expertise encapsulated\nwithin the teacher model to enhance the efficiency and effectiveness of the student model\nin various machine learning tasks."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 39,
+    "offset": 10,
     "definition": "Concerned with the automatic discovery of regularities in data through the use of computer algorithms and with the use of these regularities to take actions such as",
     "context": [
       "[4] T. Orekondy, B. Schiele, and M. Fritz, “Knockoff nets: Stealing functionality of black-box models,” in\nProceedings of the IEEE/CVF conference on computer vision and pattern recognition , 2019, pp.",
@@ -400,49 +80,35 @@
     "metadata": {}
   },
   {
-    "offset": 40,
-    "definition": "In machine learning, pattern recognition, and image processing, feature extraction starts from an initial set of measured data and builds derived values (features) intended to be informative and non-redundant, facilitating the subsequent learning and generalization steps, and in some cases leading to better human interpretations.",
+    "offset": 11,
+    "definition": "Is a value that enables a program to indirectly access a particular datum, such as a variable's value or a record, in the computer's memory or in some other storage device. The reference is said to refer to the datum, and accessing the datum is called dereferencing the reference.",
     "context": [
-      "For knockoff models, we utilize two learning models, Roberta base and Distilbert base\nuncased, from the HuggingFace library for feature extraction.",
-      "Table 3 shows the comparison\nof inference time of victim and 8 knockoff models, while table 4 and table 5 show\nthe results of knockoff models with unfrozen BERT layers during the feature extraction\nphase, while table 7 and table 8 show the results of knockoff models with frozen BERT\nlayers."
+      "References\n[1] W. Liu, Z. Wang, X. Liu, ..., and F. E. Alsaadi, “A survey of deep neural network architectures and their\napplications,” Neurocomputing , vol.",
+      "REFERENCES \n \n[1] P. Pecina, \"A Machine Learning Approach to Mult iword \nExpression Extraction\", In Proceedings of the LREC z008 \nWorkshop Towards a Shared Task for Multiword Expres sions \n(MWE z008), Marrakech, Morocco, May z008."
     ],
     "metadata": {}
   },
   {
-    "offset": 41,
-    "definition": "A machine learning technique in which knowledge learned from a task is reused in order to boost performance on a related task.[342] For example, for image classification, knowledge gained while learning to recognize cars could be applied when trying to recognize trucks.",
+    "offset": 12,
+    "definition": "In software engineering, a software development process is the process of dividing software development work into distinct phases to improve design, product management, and project management. It is also known as a software development life cycle (SDLC). The methodology may include the pre-definition of specific deliverables and artifacts that are created and completed by a project team to develop or maintain an application.[150]",
     "context": [
-      "C. RQ3: What is the impact of the transfer learning on the quality of knockoff model?",
-      "We also explore the impact of transfer learning process on mimic model performance\nby conducting experiments with 8 test models, each comprising two phases: feature\nextraction and text classification."
+      "The proposed method\nThis article’s overall objective is to present a methodology for constructing knockoff\nmodels derived from black-box neural models tailored for text sentiment analysis."
     ],
     "metadata": {}
   },
   {
-    "offset": 42,
-    "definition": "A collection or container is a grouping of some variable number of data items (possibly zero) that have some shared significance to the problem being solved and need to be operated upon together in some controlled fashion. Generally, the data items will be of the same type or, in languages supporting inheritance, derived from some common ancestor type. A collection is a concept applicable to abstract data types, and does not prescribe a specific implementation as a concrete data structure, though often there is a conventional choice (see Container for type theory discussion).",
+    "offset": 13,
+    "definition": "In object-oriented programming (OOP), a procedure associated with a message and an object. An object consists of data and behavior. The data and behavior comprise an interface, which specifies how the object may be utilized by any of various consumers[149] of the object.",
     "context": [
-      "Step 1 : Firstly, a meticulous selection process is undertaken from a comprehensive\ncollection of datasets relevant to text sentiment analysis to curate a subset of data\nsamples."
+      "Recent publications have often concentrated on the\nfield of computer vision; in contrast, there is still relatively little research on methods for\nattacking black box models with textual data.",
+      "This article introduces a research method for\nextracting the functionality of a black box model in the task of text sentiment analysis.",
+      "There are only few \napplications and methods developed for machine \nprocessing of Croatian language texts.",
+      "V. APPLICATION DESCRIPTION \n \nThe tool being developed for text processing \nincorporates a fusion of linguistic knowledge and corpora \nmethods."
     ],
     "metadata": {}
   },
   {
-    "offset": 43,
-    "definition": "In cryptography, encryption is the process of encoding information. This process converts the original representation of the information, known as plaintext, into an alternative form known as ciphertext. Ideally, only authorized parties can decipher a ciphertext back to plaintext and access the original information. Encryption does not itself prevent interference but denies the intelligible content to a would-be interceptor. For technical reasons, an encryption scheme usually uses a pseudo-random encryption key generated by an algorithm. It is possible to decrypt the message without possessing the key, but, for a well-designed encryption scheme, considerable computational resources and skills are required. An authorized recipient can easily decrypt the message with the key provided by the originator to recipients but not to unauthorized users. Historically, various forms of encryption have been used to aid in cryptography. Early encryption techniques were often utilized in military messaging. Since then, new techniques have emerged and become commonplace in all areas of modern computing.[106] Modern encryption schemes utilize the concepts of public-key and symmetric- key.[106] Modern encryption techniques ensure security because modern computers are inefficient at cracking the encryption.",
-    "context": [
-      "His research focuses on the fields of security and\nencryption, virtual reality simulation systems, and artificial intelligence."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 44,
-    "definition": "Computer software, or simply software, is a collection of data or computer instructions that tell the computer how to work. This is in contrast to physical hardware, from which the system is built and actually performs the work. In computer science and software engineering, computer software is all information processed by computer systems, programs and data. Computer software includes computer programs, libraries and related non-executable data, such as online documentation or digital media. Computer hardware and software require each other and neither can be realistically used on its own.",
-    "context": [
-      "In addition,\nhe also actively researches artificial intelligence, information system security and software\nreverse engineering."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 45,
+    "offset": 14,
     "definition": "In computer and software engineering is the process by which a computer or virtual machine executes the instructions of a computer program. Each instruction of a program is a description of a particular action which to be carried out in order for a specific problem to be solved; as instructions of a program and therefore the actions they describe are being carried out by an executing machine, specific effects are produced in accordance to the semantics of the instructions being executed.",
     "context": [
       "On the right\nside, the corresponding execution time is illustrated in seconds.",
@@ -451,106 +117,44 @@
     "metadata": {}
   },
   {
-    "offset": 46,
-    "definition": "An object can be a variable, a data structure, a function, or a method, and as such, is a value in memory referenced by an identifier. In the class-based object-oriented programming paradigm, object refers to a particular instance of a class, where the object can be a combination of variables, functions, and data structures. In relational database management, an object can be a table or column, or an association between data and a database entity (such as relating a",
+    "offset": 15,
+    "definition": "An artificial intelligence data structure used to divide knowledge into substructures by representing \"stereotyped situations\". Frames are the primary data structure used in artificial intelligence frame language.",
     "context": [
-      "The ultimate objective of knowledge distillation is to leverage the expertise encapsulated\nwithin the teacher model to enhance the efficiency and effectiveness of the student model\nin various machine learning tasks.",
-      "The proposed method\nThis article’s overall objective is to present a methodology for constructing knockoff\nmodels derived from black-box neural models tailored for text sentiment analysis."
+      "Nonetheless, this framework enables\na worst-case assessment of learning algorithm security, providing empirical upper limits\non potential performance degradation under attack.",
+      "TWEET 3 59,900 45,600 12,300Twitter consists of 7 heterogenous tasks in Twitter, all framed\nas multiclass tweet classification."
     ],
     "metadata": {}
   },
   {
-    "offset": 47,
-    "definition": "In machine learning, naive Bayes classifiers are a family of simple probabilistic classifiers based on applying Bayes' theorem with strong (naive) independence assumptions between the features.",
+    "offset": 16,
+    "definition": "In a programming language, a combination of one or more constants, variables, operators, and functions that the programming language interprets (according to its particular rules of precedence and of association) and computes to produce (\"to return\", in a stateful environment) another value. This process, as for mathematical expressions, is called evaluation. F",
     "context": [
-      "Traditionally, machine learning approaches were employed for text sentiment analysis,\nwhere features were manually engineered from the text, and models like Support Vector\nMachines (SVM) or Naive Bayes classifiers were trained on these features."
+      "This ability to capture context at scale has significantly improved sentiment\nanalysis tasks, enabling models to better understand the nuances and subtleties of human\nlanguage and sentiment expression [22].",
+      "These samples are carefully chosen to represent a diverse range of textual\ninputs, encompassing various linguistic styles, topics, and sentiment expressions.",
+      "In our approach we use the \nsyntactic preprocessing of texts in order to better identi fy \ncandidate expressions.",
+      "REFERENCES \n \n[1] P. Pecina, \"A Machine Learning Approach to Mult iword \nExpression Extraction\", In Proceedings of the LREC z008 \nWorkshop Towards a Shared Task for Multiword Expres sions \n(MWE z008), Marrakech, Morocco, May z008."
     ],
     "metadata": {}
   },
   {
-    "offset": 48,
-    "definition": "A genetic operator used to maintain genetic diversity from one generation of a population of genetic algorithm chromosomes to the next. It is analogous to biological mutation. Mutation alters one or more gene values in a chromosome from its initial state. In mutation, the solution may change entirely from the previous solution. Hence GA can come to a better solution by using mutation. Mutation occurs during evolution according to a user-definable mutation probability. This probability should be set low. If it is set too high, the search will turn into a primitive random search. Mycin An early backward chaining expert system that used artificial intelligence to identify bacteria causing severe infections, such as bacteremia and meningitis, and to recommend antibiotics, with the dosage adjusted for patient's body weight – the name derived from the antibiotics themselves, as many antibiotics have the suffix \"-mycin\". The MYCIN system was also used for the diagnosis of blood clotting diseases. N",
-    "context": [
-      "XLNet is another transformer-based model\nthat uses a permutation-based training approach to capture bidirectional context [25]."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 49,
-    "definition": "An ensemble learning method for classification, regression, and other tasks that operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees.[299][300] Random decision forests correct for decision trees' habit of overfitting to",
-    "context": [
-      "Various machine learning\nmethods are employed for text classification, including regression, SVM, Random Forest,\nand Bagging."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 50,
-    "definition": "A family of algorithms for global optimization inspired by biological evolution, and the subfield of artificial intelligence and soft computing studying these algorithms. In technical terms, they are a family of population-based trial and error problem solvers with a metaheuristic or stochastic optimization character.",
-    "context": [
-      "He is\nresearching in the field of machine learning and evolutionary computation, specialized with\nevolutionary machine learning for data mining with missing data.",
-      "He serves as a reviewer\nof international journals, including IEEE Transactions on Evolutionary Computation, IEEE\nTransactions on Cybernetics, Pattern Recognition, Knowledge-Based Systems, Applied Soft\nComputing and Engineering Application of Artificial Intelligence."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 51,
-    "definition": "In machine learning, support vector machines (SVMs, also support vector networks[328]) are supervised learning models with associated learning algorithms that analyze data used for classification and regression.",
-    "context": [],
-    "metadata": {}
-  },
-  {
-    "offset": 52,
-    "definition": "Is a sequence of data elements made available over time. A stream can be thought of as items on a conveyor belt being processed one at a time rather than in large batches.",
-    "context": [
-      "Through this approach, practitioners can strike a\nbalance between model complexity and computational overhead, thereby facilitating the\ndeployment of more streamlined and scalable machine learning solutions [17]–[19]."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 53,
-    "definition": "A neural network can refer to either a neural circuit of biological neurons (sometimes also called a biological neural network), or a network of artificial neurons or nodes in the case of an artificial neural network.[248] Artificial neural networks are used for solving artificial intelligence (AI) problems; they model connections of biological neurons as weights between nodes. A positive weight reflects an excitatory connection, while negative values mean inhibitory connections. All inputs are modified by a weight and summed. This activity is referred to as a linear combination. Finally, an activation function controls the amplitude of the output. For example, an acceptable range of output is usually between 0 and 1, or it could be −1 and 1.",
-    "context": [
-      "Convolutional Neural Networks and Recurrent Neural Networks have\nshown remarkable success in automatically learning features from raw text data, enabling\nthem to capture complex patterns and dependencies [21].",
-      "References\n[1] W. Liu, Z. Wang, X. Liu, ..., and F. E. Alsaadi, “A survey of deep neural network architectures and their\napplications,” Neurocomputing , vol."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 54,
-    "definition": "An interdisciplinary scientific field that deals with how computers can be made to gain high-level understanding from digital images or videos. From the perspective of engineering, it seeks to automate tasks that the human visual system can do.[70][71][72]",
+    "offset": 17,
+    "definition": "Data that has several parts, known as a record, can be divided into fields. Relational databases arrange data as sets of database records, so called rows. Each record consists of several fields; the fields of all records form the columns. Examples of fields: name, gender, hair colour.",
     "context": [
       "Recent publications have often concentrated on the\nfield of computer vision; in contrast, there is still relatively little research on methods for\nattacking black box models with textual data.",
-      "In recent years, there has been a considerable amount of research focusing on the vul-\nnerability of black-box neural models in computer vision tasks, particularly in the context\nof stealing functions."
+      "01, June-2024\nBlack-box neural models utilized for text sentiment analysis can also be susceptible\nto function stealing, similar to the broader field of NLP, which has seen limited research\non this topic."
     ],
     "metadata": {}
   },
   {
-    "offset": 55,
-    "definition": "In general, the term cognitive computing has been used to refer to new hardware and/or software that mimics the functioning of the human brain[82][83][84][85][86][87] and helps to improve human decision-making.[88] In this sense, CC is a new type of computing with the goal of more accurate models of how the human brain/mind senses, reasons, and responds to stimulus.",
+    "offset": 18,
+    "definition": "In cryptography, encryption is the process of encoding information. This process converts the original representation of the information, known as plaintext, into an alternative form known as ciphertext. Ideally, only authorized parties can decipher a ciphertext back to plaintext and access the original information. Encryption does not itself prevent interference but denies the intelligible content to a would-be interceptor. For technical reasons, an encryption scheme usually uses a pseudo-random encryption key generated by an algorithm. It is possible to decrypt the message without possessing the key, but, for a well-designed encryption scheme, considerable computational resources and skills are required. An authorized recipient can easily decrypt the message with the key provided by the originator to recipients but not to unauthorized users. Historically, various forms of encryption have been used to aid in cryptography. Early encryption techniques were often utilized in military messaging. Since then, new techniques have emerged and become commonplace in all areas of modern computing.[106] Modern encryption schemes utilize the concepts of public-key and symmetric- key.[106] Modern encryption techniques ensure security because modern computers are inefficient at cracking the encryption.",
     "context": [
-      "[23] V. Sanh, L. Debut, J. Chaumond, and T. Wolf, “DistilBERT, a distilled version of BERT: smaller, faster, cheaper\nand lighter,” in The 5th Workshop on Energy Efficient Machine Learning and Cognitive Computing - NeurIPS\n2019. doi: 10.48550/arXiv.1910.01108\n[24] Y. Liu, M. Ott, N. Goyal, ..., and V. Stoyanov, “RoBERTa: A Robustly Optimized BERT Pretraining Approach,”\narXiv preprint arXiv:1907.11692 , 2019. doi: 10.48550/arXiv.1907.11692\n[25] Z. Yang, Z. Dai, Y. Yang, ..., and Q. V. Le, “XLNet: Generalized Autoregressive Pretraining for Language Under-\nstanding,” Advances in neural information processing systems , vol."
+      "His research focuses on the fields of security and\nencryption, virtual reality simulation systems, and artificial intelligence."
     ],
     "metadata": {}
   },
   {
-    "offset": 56,
-    "definition": "An individual measurable property or characteristic of a phenomenon.[180] In computer vision and image processing, a feature is a piece of information about the content of an image; typically about whether a certain region of the image has certain properties. Features may be specific structures in an image (such as points, edges, or objects), or the result of a general neighborhood operation or feature detection applied to the image.",
-    "context": [
-      "Traditionally, machine learning approaches were employed for text sentiment analysis,\nwhere features were manually engineered from the text, and models like Support Vector\nMachines (SVM) or Naive Bayes classifiers were trained on these features.",
-      "These\nmethods often relied on handcrafted features such as Bag-of-Words or TF-IDF represen-\ntations, limiting their ability to capture nuanced relationships in text data [20]."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 57,
-    "definition": "An element that is different from other elements. Database records are kept separate using unique keys. A set guarantees that all its elements are unique. The existence of a unique element is modeled using uniqueness quantification. Finding unique elements in a sequence or list requires data deduplication. Contrast singleton.",
-    "context": [
-      "It was parsed with the\nStanford parser and includes a total of 215,154 unique phrases\nfrom those parse trees, each annotated by 3 human judges."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 58,
+    "offset": 19,
     "definition": "In computer programming, a special kind of variable, used in a subroutine to refer to one of the pieces of data provided as input to the subroutine.[b] These pieces of data are the values[162][163][164] of the arguments (often called actual arguments or actual parameters) with which the subroutine is going to be called/invoked. An ordered list of parameters is usually included in the definition of a subroutine, so that, each time the subroutine is called, its arguments for that call are evaluated, and the resulting values can be assigned to the corresponding parameters.",
     "context": [
       "Therefore, intrinsic information about the model\n(such as architecture, hyperparameters, and training data) needs to be kept confidential.",
@@ -559,41 +163,18 @@
     "metadata": {}
   },
   {
-    "offset": 59,
-    "definition": "A type of deep learning architecture that exploits a multi-head attention mechanism. Transformers address some of the limitations of long short-term memory, and became widely used in natural language processing, although it can also process other types of",
+    "offset": 20,
+    "definition": "Is a person who utilizes a computer or network service. Users of computer systems and software products generally lack the technical expertise required to fully understand how they work.[242] Power users use advanced features of programs, though they are not necessarily capable of computer programming and system administration.",
     "context": [
-      "In recent years, transformer-based models have revolutionized the field of NLP, includ-\ning text sentiment analysis.",
-      "Transformers, such as BERT (Bidirectional Encoder Repre-\nsentations from Transformers), have achieved state-of-the-art performance by leveraging\nself-attention mechanisms to capture contextual information from text sequences [22]."
+      "As a result, we have seen a growing number of companies integrating neural models\ninto their products and services, recognizing the immense potential of AI technologies\nto drive efficiency and enhance user experiences.",
+      "Moreover, sentiment analysis plays a vital role in various domains, including\nmarketing, customer service, and social media monitoring, where understanding the\nsentiment of users’ feedback is essential for maintaining customer satisfaction and\nmanaging brand reputation [6], [7].",
+      "The user has r equest ed enhanc ement of the do wnlo aded file.",
+      "User interface with application controls can be see n in \nFig."
     ],
     "metadata": {}
   },
   {
-    "offset": 60,
-    "definition": "A record (also called a structure, struct, or compound data) is a basic data structure. Records in a database or spreadsheet are usually called \"rows\".[176][177][178][179]",
-    "context": [
-      "To ensure that the extracted model has similar\nfunctionality to the victim model, we must evaluate the similarity in the predictions\nof the two models on the same test set of V:\nAgreement V A(Dtest\nV) =1\n|Dtest\nV|X\nx∈Dtest\nVcount (FA(x) =FV(x)) (1)\nHere, the count() function is an indicator function, |Dtest\nV|returning the total number\nof records in the set Dtest\nV. The higher value of Agreement() shows that FAis more\nsimilar in function to FV."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 61,
-    "definition": "In deep learning, a convolutional neural network (CNN, or ConvNet) is a class of deep neural network most commonly applied to image analysis. CNNs use a variation of multilayer perceptrons designed to require minimal preprocessing.[121] They are also known as shift invariant or space invariant artificial neural networks (SIANN), based on their shared-weights architecture and translation invariance characteristics.[122][123]",
-    "context": [
-      "Convolutional Neural Networks and Recurrent Neural Networks have\nshown remarkable success in automatically learning features from raw text data, enabling\nthem to capture complex patterns and dependencies [21]."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 62,
-    "definition": "Is a process of discovering patterns in large data sets involving methods at the intersection of machine learning, statistics, and database systems.[86] Data mining is an interdisciplinary subfield of computer science and statistics with an overall goal to extract information (with intelligent methods) from a data set and transform the information into a comprehensible structure for further use.[86][87][88][89] Data mining is the analysis step of the \"knowledge discovery in databases\" process, or KDD.[90] Aside from the raw analysis step, it also involves database and data management aspects, data pre-processing, model and inference considerations, interestingness metrics, complexity considerations, post-processing of discovered structures, visualization, and online updating.[86]",
-    "context": [
-      "[17] C. Bucilu ˇa, R. Caruana, and A. Niculescu-Mizil, “Model compression,” in Proceedings of the 12th ACM\nSIGKDD international conference on Knowledge discovery and data mining , 2006, pp.",
-      "He is\nresearching in the field of machine learning and evolutionary computation, specialized with\nevolutionary machine learning for data mining with missing data."
-    ],
-    "metadata": {}
-  },
-  {
-    "offset": 63,
+    "offset": 21,
     "definition": "The discovery, interpretation, and communication of meaningful patterns in data.",
     "context": [
       "The text sentiment datasets used in the experiment\nDatasets Class Total Train-set Test-set Note\nIMDB 2 50,000 25,000 25,000IMDB dataset having 50K movie reviews for natural language\nprocessing or Text analytics."
@@ -601,7 +182,35 @@
     "metadata": {}
   },
   {
-    "offset": 64,
+    "offset": 22,
+    "definition": "In object-oriented programming, an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).[43][44] In many languages, the class name is used as the name for the class (the template itself), the name for the default constructor of the class (a subroutine that creates objects), and as the type of objects generated by instantiating the class; these distinct",
+    "context": [
+      "Index terms\nText classification, text sentiment, black-box model stealing, knockoff model.",
+      "[16] also explored sample\nselection options such as uncertainty strategy, k-center algorithm, or DeepFool-based\nactive learning, showing promising results in image classification problems."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 23,
+    "definition": "Is an abstract data type that can store unique values, without any particular order. It is a computer implementation of the mathematical concept of a finite set. Unlike most other collection types, rather than retrieving a specific element from a set, one typically tests a value for membership in a set.",
+    "context": [
+      "This evaluation may involve comparing\nthe outputs of the knockoff model with those of the target model on a separate test\ndataset [8], [9].",
+      "In a white-box attack, the attacker has ex-\ntensive knowledge of the model, including its structure, parameters, and training dataset.",
+      "This is a part of the AVL dictionary word list with its \nPOS tags:  \nInverzno -A \nKod -N \nLoša -A \nPC -N \nPrednosti -N \nSetTimer -N \nTakav -P \nTakođer -C \nTo -P \nVrlo -A \nWindowsi -N \nakvizicijska -A \nali -C \nautomatizirane -A \nbi -V \nbiti -V \nbroj -N \ndebugati -V \ndobije -V \ndobiti -V \ndobiveni –A \ndodatno -A \ndotičnim -A \ndovoljno -A \n \nThe syntactic patterns for English proposed by different \nauthors are shown in the following list [6]: \n \n1."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 24,
+    "definition": "The stage of a genetic algorithm in which individual genomes are chosen from a population for later breeding (using the crossover operator).",
+    "context": [
+      "For instance, [4] proposed random or adaptive data selection strategies, while [15]\nsuggested building a prediction army to guide the next choice.",
+      "[16] also explored sample\nselection options such as uncertainty strategy, k-center algorithm, or DeepFool-based\nactive learning, showing promising results in image classification problems."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 25,
     "definition": "The machine learning task of learning a function that maps an input to an output based on example input-output pairs.[326] It infers a function from labeled training data consisting of a set of training examples.[327] In supervised learning, each example is a pair consisting of an input object (typically a vector) and a desired output value (also called the supervisory signal). A supervised learning algorithm analyzes the training data and produces an inferred function, which can be used for mapping new examples. An optimal scenario will allow for the algorithm to correctly determine the class labels for unseen instances. This requires the learning algorithm to generalize from the training data to unseen situations in a \"reasonable\" way (see inductive bias).",
     "context": [
       "This process unfolds through a series of steps, beginning\nwith the training of the teacher model on a designated dataset using conventional\nsupervised learning methods.",
@@ -610,15 +219,217 @@
     "metadata": {}
   },
   {
-    "offset": 65,
-    "definition": "The mathematical research in areas of science where computing plays an essential role.",
+    "offset": 26,
+    "definition": "In machine learning, pattern recognition, and image processing, feature extraction starts from an initial set of measured data and builds derived values (features) intended to be informative and non-redundant, facilitating the subsequent learning and generalization steps, and in some cases leading to better human interpretations.",
     "context": [
-      "His main research interests are artificial intelligence, machine learning\nand computational mathematics."
+      "For knockoff models, we utilize two learning models, Roberta base and Distilbert base\nuncased, from the HuggingFace library for feature extraction.",
+      "Table 3 shows the comparison\nof inference time of victim and 8 knockoff models, while table 4 and table 5 show\nthe results of knockoff models with unfrozen BERT layers during the feature extraction\nphase, while table 7 and table 8 show the results of knockoff models with frozen BERT\nlayers."
     ],
     "metadata": {}
   },
   {
-    "offset": 66,
+    "offset": 27,
+    "definition": "In information technology and computer science, a system is described as stateful if it is designed to remember preceding events or user interactions;[219] the remembered information is called the state of the system.",
+    "context": [
+      "Transformers, such as BERT (Bidirectional Encoder Repre-\nsentations from Transformers), have achieved state-of-the-art performance by leveraging\nself-attention mechanisms to capture contextual information from text sequences [22].",
+      "The state of t he \nart shows that there is interest in statistical [1, z] , \nunsupervised machine learning [3, 4], and syntactic \napproaches [5] to the problem."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 28,
+    "definition": "A genetic operator used to maintain genetic diversity from one generation of a population of genetic algorithm chromosomes to the next. It is analogous to biological mutation. Mutation alters one or more gene values in a chromosome from its initial state. In mutation, the solution may change entirely from the previous solution. Hence GA can come to a better solution by using mutation. Mutation occurs during evolution according to a user-definable mutation probability. This probability should be set low. If it is set too high, the search will turn into a primitive random search. Mycin An early backward chaining expert system that used artificial intelligence to identify bacteria causing severe infections, such as bacteremia and meningitis, and to recommend antibiotics, with the dosage adjusted for patient's body weight – the name derived from the antibiotics themselves, as many antibiotics have the suffix \"-mycin\". The MYCIN system was also used for the diagnosis of blood clotting diseases. N",
+    "context": [
+      "XLNet is another transformer-based model\nthat uses a permutation-based training approach to capture bidirectional context [25]."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 30,
+    "definition": "In mathematics, a sequence is an enumerated collection of objects in which repetitions are allowed and order does matter. Like a set, it contains members (also called elements, or terms). The number of elements (possibly infinite) is called the length of the sequence. Unlike a set, the same elements can appear multiple times at different positions in a sequence, and order does matter. Formally, a sequence can be defined as a function whose domain is either the set of the natural numbers (for infinite sequences) or the set of the first n natural numbers (for a sequence of finite length n). The position of an element in a sequence is its rank or index; it is the natural number for which the element is the image. The first element has index 0 or 1, depending on the context or a specific convention. When a symbol is used to denote a sequence, the nth element of the sequence is denoted by this symbol with n as subscript; for example, the nth element of the Fibonacci sequence F is generally denoted F . For example, (M, A, R, Y) is a sequence of letters with the letter 'M' first and 'Y' last. This sequence differs from (A, R, M, Y). Also, the sequence (1, 1, 2, 3, 5, 8), which contains the number 1 at two different positions, is a valid sequence. Sequences can be finite, as in these examples, or infinite, such as the sequence of all even positive integers (2, 4, 6, ...). In computing and computer science, finite sequences are sometimes called strings, words or lists, the different names commonly corresponding to different ways to represent them in computer memory; infinite sequences are called streams. The empty sequence ( ) is included in most notions of sequence, but may be excluded depending on the context.",
+    "context": [
+      "Transformers, such as BERT (Bidirectional Encoder Repre-\nsentations from Transformers), have achieved state-of-the-art performance by leveraging\nself-attention mechanisms to capture contextual information from text sequences [22].",
+      "Problem arises as a consequence of Croatian language \ncomplexity and specificity regarding language inflexions \nand free word order [9, 10, 11, 1z, 13]."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 31,
+    "definition": "An element that is different from other elements. Database records are kept separate using unique keys. A set guarantees that all its elements are unique. The existence of a unique element is modeled using uniqueness quantification. Finding unique elements in a sequence or list requires data deduplication. Contrast singleton.",
+    "context": [
+      "It was parsed with the\nStanford parser and includes a total of 215,154 unique phrases\nfrom those parse trees, each annotated by 3 human judges."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 32,
+    "definition": "An individual measurable property or characteristic of a phenomenon.[180] In computer vision and image processing, a feature is a piece of information about the content of an image; typically about whether a certain region of the image has certain properties. Features may be specific structures in an image (such as points, edges, or objects), or the result of a general neighborhood operation or feature detection applied to the image.",
+    "context": [
+      "Traditionally, machine learning approaches were employed for text sentiment analysis,\nwhere features were manually engineered from the text, and models like Support Vector\nMachines (SVM) or Naive Bayes classifiers were trained on these features.",
+      "These\nmethods often relied on handcrafted features such as Bag-of-Words or TF-IDF represen-\ntations, limiting their ability to capture nuanced relationships in text data [20]."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 33,
+    "definition": "An interdisciplinary scientific field that deals with how computers can be made to gain high-level understanding from digital images or videos. From the perspective of engineering, it seeks to automate tasks that the human visual system can do.[70][71][72]",
+    "context": [
+      "Recent publications have often concentrated on the\nfield of computer vision; in contrast, there is still relatively little research on methods for\nattacking black box models with textual data.",
+      "In recent years, there has been a considerable amount of research focusing on the vul-\nnerability of black-box neural models in computer vision tasks, particularly in the context\nof stealing functions."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 34,
+    "definition": "The process of transferring knowledge from a large machine learning model to a smaller one.",
+    "context": [
+      "Knowledge distillation\nKnowledge distillation, a widely-used technique in machine learning, involves training\na smaller model, termed the student model, to emulate the intricate behavior of a larger,\nmore complex model known as the teacher model.",
+      "The ultimate objective of knowledge distillation is to leverage the expertise encapsulated\nwithin the teacher model to enhance the efficiency and effectiveness of the student model\nin various machine learning tasks."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 35,
+    "definition": "A family of algorithms for global optimization inspired by biological evolution, and the subfield of artificial intelligence and soft computing studying these algorithms. In technical terms, they are a family of population-based trial and error problem solvers with a metaheuristic or stochastic optimization character.",
+    "context": [
+      "He is\nresearching in the field of machine learning and evolutionary computation, specialized with\nevolutionary machine learning for data mining with missing data.",
+      "He serves as a reviewer\nof international journals, including IEEE Transactions on Evolutionary Computation, IEEE\nTransactions on Cybernetics, Pattern Recognition, Knowledge-Based Systems, Applied Soft\nComputing and Engineering Application of Artificial Intelligence."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 36,
+    "definition": "Is a process of discovering patterns in large data sets involving methods at the intersection of machine learning, statistics, and database systems.[86] Data mining is an interdisciplinary subfield of computer science and statistics with an overall goal to extract information (with intelligent methods) from a data set and transform the information into a comprehensible structure for further use.[86][87][88][89] Data mining is the analysis step of the \"knowledge discovery in databases\" process, or KDD.[90] Aside from the raw analysis step, it also involves database and data management aspects, data pre-processing, model and inference considerations, interestingness metrics, complexity considerations, post-processing of discovered structures, visualization, and online updating.[86]",
+    "context": [
+      "[17] C. Bucilu ˇa, R. Caruana, and A. Niculescu-Mizil, “Model compression,” in Proceedings of the 12th ACM\nSIGKDD international conference on Knowledge discovery and data mining , 2006, pp.",
+      "He is\nresearching in the field of machine learning and evolutionary computation, specialized with\nevolutionary machine learning for data mining with missing data."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 37,
+    "definition": "In machine learning, naive Bayes classifiers are a family of simple probabilistic classifiers based on applying Bayes' theorem with strong (naive) independence assumptions between the features.",
+    "context": [
+      "Traditionally, machine learning approaches were employed for text sentiment analysis,\nwhere features were manually engineered from the text, and models like Support Vector\nMachines (SVM) or Naive Bayes classifiers were trained on these features."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 39,
+    "definition": "Is any goal-oriented activity requiring, benefiting from, or creating computing machinery. It includes study of algorithmic processes and development of both hardware and software. It has scientific, engineering, mathematical, technological and social aspects. Major computing fields include computer engineering, computer science, cybersecurity, data science, information systems, information technology and software engineering.[73]",
+    "context": [
+      "References\n[1] W. Liu, Z. Wang, X. Liu, ..., and F. E. Alsaadi, “A survey of deep neural network architectures and their\napplications,” Neurocomputing , vol.",
+      "11–26, 2017. doi: 10.1016/j.neucom.2016.12.038\n[2] P. P. Shinde and S. Shah, “A review of machine learning and deep learning applications,” in 2018 Fourth\ninternational conference on computing communication control and automation (ICCUBEA) .",
+      "[3] A-C. N. Ngomo, \"Knowledge-free discovery of dom ain-\nspecific multiword units\", in Proceedings of the z0 08 ACM \nsymposium on Applied computing, pages 1561-1565, \nFortaleza, Ceara, Brazil, z008."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 40,
+    "definition": "LoRA stands for Low-Rank Adaptation. It is a method used to fine-tune large models by updating only a small, targeted part of the model. This makes it quicker and less resource- intensive to adapt the model to specific tasks or new datasets. M",
+    "context": [
+      "Therefore, there is a\npressing need for further research and exploration into the vulnerabilities of black-box\nneural models in NLP tasks, as well as the development of effective countermeasures\nto mitigate potential risks."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 41,
+    "definition": "Machine learning-based attention is a mechanism mimicking cognitive attention. It calculates \"soft\" weights for each word, more precisely for its embedding, in the context window. It can do it either in parallel (such as in transformers) or sequentially (such as in recursive neural networks). \"Soft\" weights can change during each runtime, in contrast to \"hard\" weights, which are (pre-)trained and fine-tuned and remain frozen afterwards. Multiple attention heads are used in transformer-based large language models.",
+    "context": [
+      "Transformers, such as BERT (Bidirectional Encoder Repre-\nsentations from Transformers), have achieved state-of-the-art performance by leveraging\nself-attention mechanisms to capture contextual information from text sequences [22]."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 42,
+    "definition": "Is the targeted subject area of a computer program. It is a term used in software engineering. Formally it represents the target subject of a specific programming project, whether narrowly or",
+    "context": [
+      "Moreover, sentiment analysis plays a vital role in various domains, including\nmarketing, customer service, and social media monitoring, where understanding the\nsentiment of users’ feedback is essential for maintaining customer satisfaction and\nmanaging brand reputation [6], [7].",
+      "The input to the building \nprocedure is a number of Croatian technical texts f rom a \nrestricted domain.",
+      "Technical \nterms dictionary building for different constrained domains \nis a complex procedure that requires expert engagement \nand close collaboration with linguists."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 43,
+    "definition": "A record (also called a structure, struct, or compound data) is a basic data structure. Records in a database or spreadsheet are usually called \"rows\".[176][177][178][179]",
+    "context": [
+      "To ensure that the extracted model has similar\nfunctionality to the victim model, we must evaluate the similarity in the predictions\nof the two models on the same test set of V:\nAgreement V A(Dtest\nV) =1\n|Dtest\nV|X\nx∈Dtest\nVcount (FA(x) =FV(x)) (1)\nHere, the count() function is an indicator function, |Dtest\nV|returning the total number\nof records in the set Dtest\nV. The higher value of Agreement() shows that FAis more\nsimilar in function to FV."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 44,
+    "definition": "In general, the term cognitive computing has been used to refer to new hardware and/or software that mimics the functioning of the human brain[82][83][84][85][86][87] and helps to improve human decision-making.[88] In this sense, CC is a new type of computing with the goal of more accurate models of how the human brain/mind senses, reasons, and responds to stimulus.",
+    "context": [
+      "[23] V. Sanh, L. Debut, J. Chaumond, and T. Wolf, “DistilBERT, a distilled version of BERT: smaller, faster, cheaper\nand lighter,” in The 5th Workshop on Energy Efficient Machine Learning and Cognitive Computing - NeurIPS\n2019. doi: 10.48550/arXiv.1910.01108\n[24] Y. Liu, M. Ott, N. Goyal, ..., and V. Stoyanov, “RoBERTa: A Robustly Optimized BERT Pretraining Approach,”\narXiv preprint arXiv:1907.11692 , 2019. doi: 10.48550/arXiv.1907.11692\n[25] Z. Yang, Z. Dai, Y. Yang, ..., and Q. V. Le, “XLNet: Generalized Autoregressive Pretraining for Language Under-\nstanding,” Advances in neural information processing systems , vol."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 45,
+    "definition": "A device that can be instructed to carry out sequences of arithmetic or logical operations automatically via computer programming. Modern computers have the ability to follow generalized sets of operations, called programs. These programs enable computers to perform an extremely wide range of tasks.",
+    "context": [
+      "Recent publications have often concentrated on the\nfield of computer vision; in contrast, there is still relatively little research on methods for\nattacking black box models with textual data.",
+      "In recent years, there has been a considerable amount of research focusing on the vul-\nnerability of black-box neural models in computer vision tasks, particularly in the context\nof stealing functions.",
+      "[4] A-C. N. Ngomo, SIGNUM: A Graph Algorithm for \nTerminology Extraction, Computational Linguistics a nd \nIntelligent Text Processing , Lecture Notes in Computer \nScience, pages 85-95, z008."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 46,
+    "definition": "An ensemble learning method for classification, regression, and other tasks that operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees.[299][300] Random decision forests correct for decision trees' habit of overfitting to",
+    "context": [
+      "Various machine learning\nmethods are employed for text classification, including regression, SVM, Random Forest,\nand Bagging."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 47,
+    "definition": "A collection or container is a grouping of some variable number of data items (possibly zero) that have some shared significance to the problem being solved and need to be operated upon together in some controlled fashion. Generally, the data items will be of the same type or, in languages supporting inheritance, derived from some common ancestor type. A collection is a concept applicable to abstract data types, and does not prescribe a specific implementation as a concrete data structure, though often there is a conventional choice (see Container for type theory discussion).",
+    "context": [
+      "Step 1 : Firstly, a meticulous selection process is undertaken from a comprehensive\ncollection of datasets relevant to text sentiment analysis to curate a subset of data\nsamples."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 48,
+    "definition": "A neural network can refer to either a neural circuit of biological neurons (sometimes also called a biological neural network), or a network of artificial neurons or nodes in the case of an artificial neural network.[248] Artificial neural networks are used for solving artificial intelligence (AI) problems; they model connections of biological neurons as weights between nodes. A positive weight reflects an excitatory connection, while negative values mean inhibitory connections. All inputs are modified by a weight and summed. This activity is referred to as a linear combination. Finally, an activation function controls the amplitude of the output. For example, an acceptable range of output is usually between 0 and 1, or it could be −1 and 1.",
+    "context": [
+      "Convolutional Neural Networks and Recurrent Neural Networks have\nshown remarkable success in automatically learning features from raw text data, enabling\nthem to capture complex patterns and dependencies [21].",
+      "References\n[1] W. Liu, Z. Wang, X. Liu, ..., and F. E. Alsaadi, “A survey of deep neural network architectures and their\napplications,” Neurocomputing , vol."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 49,
+    "definition": "An interdisciplinary field concerned with the statistical or rule-based modeling of natural language from a computational perspective, as well as the study of appropriate computational approaches to linguistic questions.",
+    "context": [
+      "32, 2019. doi: 10.48550/arXiv.1906.08237\n[26] A. Maas, R. E. Daly, P. T. Pham, ..., and C. Potts, “Learning word vectors for sentiment analysis,” in Proceedings\nof the 49th annual meeting of the association for computational linguistics: Human language technologies , 2011,\npp.",
+      "Seattle, Washington, USA: Association for Computational Linguistics, Oct. 2013, pp.",
+      "[4] A-C. N. Ngomo, SIGNUM: A Graph Algorithm for \nTerminology Extraction, Computational Linguistics a nd \nIntelligent Text Processing , Lecture Notes in Computer \nScience, pages 85-95, z008."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 50,
+    "definition": "The theory, experimentation, and engineering that form the basis for the design and use of computers. It involves the study of algorithms that process, store, and communicate digital information. A computer scientist specializes in the theory of computation and the design of",
+    "context": [
+      "Email: congpx@gmail.com\nTrung Nguyen Hoang is a fourth-year student majoring in Computer Science at Le Quy Don\nTechnical University.",
+      "Email: nguyenhtmta02@gmail.com\nCao Truong Tran received the PhD degree in computer science from Victoria University of\nWellington, New Zealand."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 51,
+    "definition": "Is a sequence of data elements made available over time. A stream can be thought of as items on a conveyor belt being processed one at a time rather than in large batches.",
+    "context": [
+      "Through this approach, practitioners can strike a\nbalance between model complexity and computational overhead, thereby facilitating the\ndeployment of more streamlined and scalable machine learning solutions [17]–[19]."
+    ],
+    "metadata": {}
+  },
+  {
+    "offset": 52,
     "definition": "A subset of machine learning that focuses on utilizing neural networks to perform tasks such as classification, regression, and representation learning. The field takes inspiration from biological neuroscience and is centered around stacking artificial neurons into layers and \"training\" them to process data. The adjective \"deep\" refers to the use of multiple layers (ranging from three to several hundred or thousands) in the network. Methods used can be either supervised, semi-supervised, or unsupervised.",
     "context": [
       "This surge can largely be attributed to groundbreaking research\nbreakthroughs, notably in deep learning, which have sparked excitement and innovation.",

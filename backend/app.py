@@ -3,17 +3,25 @@ import os
 import json
 from avl.tree import AVLTree
 from avl.node import AVLNode
+from flask_cors import CORS
+from werkzeug.utils import secure_filename
 
 from services.loader import load_terms_index
 from services.auto_save import auto_save
 from services.tree_binary import save_avl, load_avl
+from services.info_loader import load_info_by_offset
+from pdf_processing import process_multi_pdfs
 app = Flask(__name__)
-
+CORS(app, resources = {r"/*": {"origins": "*"}})
 # CÂY AVL LƯU TRONG RAM
 
 tree = AVLTree()
 root = None
 max_offset = -1   # tự tăng offset
+INFO_PATH = "data/terms_info.json"
+if not os.path.exists(INFO_PATH):
+    with open(INFO_PATH, "w", encoding="utf-8") as f:
+        json.dump({}, f)
 with open("data/terms_info.json", "r", encoding="utf-8") as f:
     TERMS_INFO = {item["offset"]: item for item in json.load(f)}
 
@@ -62,53 +70,52 @@ with open("data/terms_info.json", "r", encoding="utf-8") as f:
 #         "total_nodes": len(index_data)
 #     })
 
-@app.route("/upload", methods=["POST"])
-def upload_terms():
-    global tree, root, max_offset
+# def upload_terms():
+#     global tree, root, max_offset
 
-    # Nếu đã có avl.bin → không cho upload lại
-    if os.path.exists("data/avl.bin"):
-        return jsonify({
-            "error": "Từ điển đã tồn tại. Không được upload lại để tránh mất dữ liệu.",
-            "hint": "Hãy dùng API /sync_terms để cập nhật từ mới vào từ điển."
-        }), 409
+#     # Nếu đã có avl.bin → không cho upload lại
+#     if os.path.exists("data/avl.bin"):
+#         return jsonify({
+#             "error": "Từ điển đã tồn tại. Không được upload lại để tránh mất dữ liệu.",
+#             "hint": "Hãy dùng API /sync_terms để cập nhật từ mới vào từ điển."
+#         }), 409
 
-    # Kiểm tra file
-    if "terms_index" not in request.files:
-        return jsonify({"error": "Thiếu file terms_index"}), 400
+#     # # Kiểm tra file
+#     # if "terms_index" not in request.files:
+#     #     return jsonify({"error": "Thiếu file terms_index"}), 400
 
-    index_file = request.files["terms_index"]
+#     # index_file = request.files["terms_index"]
 
-    # Đọc JSON trực tiếp từ RAM
-    try:
-        index_data = json.load(index_file)
-    except:
-        return jsonify({"error": "File JSON không hợp lệ"}), 400
+#     # Lấy index_data từ file pdf được extract
+#     try:
+#         index_data = extract_pdfs()
+#     except:
+#         return jsonify({"error": "File JSON không hợp lệ"}), 400
 
-    # Reset cây lần đầu (không lo mất dữ liệu vì chưa có avl.bin)
-    tree = AVLTree()
-    root = None
-    max_offset = -1
+#     # Reset cây lần đầu (không lo mất dữ liệu vì chưa có avl.bin)
+#     tree = AVLTree()
+#     root = None
+#     max_offset = -1
 
-    # Build lại AVL
-    for item in index_data:
-        term = item["term"]
-        offset = item["offset"]
+#     # Build lại AVL
+#     for item in index_data:
+#         term = item["term"]
+#         offset = item["offset"]
 
-        node = AVLNode(term=term, offset=offset)  # chỉ term + offset
-        root = tree.insert(root, node)
+#         node = AVLNode(term=term, offset=offset)  # chỉ term + offset
+#         root = tree.insert(root, node)
 
-        if offset > max_offset:
-            max_offset = offset
+#         if offset > max_offset:
+#             max_offset = offset
 
-    # Lưu cây mới vào nhị phân
-    save_avl(root, "data/avl.bin")
+#     # Lưu cây mới vào nhị phân
+#     save_avl(root, "data/avl.bin")
 
-    return jsonify({
-        "message": "Upload & build AVL Tree thành công. Đã lưu avl.bin",
-        "total_nodes": len(index_data),
-        "max_offset": max_offset
-    })
+#     return jsonify({
+#         "message": "Upload & build AVL Tree thành công. Đã lưu avl.bin",
+#         "total_nodes": len(index_data),
+#         "max_offset": max_offset
+#     })
 
 # 2. API SEARCH (chính xác)
 
@@ -146,7 +153,8 @@ def api_fuzzy_full():
     global root
 
     query = request.args.get("query", "").strip()
-    threshold = int(request.args.get("threshold", 2))
+    print(request)
+    threshold = int(request.args.get("threshold", 5))
 
     if not query:
         return jsonify({"error": "Thiếu query"}), 400
@@ -186,35 +194,85 @@ def api_fuzzy_full():
 
 # 4. LOAD AVL TREE ← avl.bin
 
-@app.route("/load_tree", methods=["GET"])
-def api_load_tree():
+# @app.route("/load_tree", methods=["GET"])
+def load_tree():
     global root, tree
 
     bin_path = os.path.join(os.getcwd(), "data", "avl.bin")
 
+    #Nếu chưa có file → trả về ROOT RỖNG, không lỗi
     if not os.path.exists(bin_path):
-        return jsonify({
-            "error": "Không tìm thấy avl.bin",
-            "path_checked": bin_path
-        }), 404
+        root = None  # cây trống
+        return root, None, None   # không error, không status code
+
 
     try:
         root = load_avl(bin_path)
     except Exception as e:
-        return jsonify({
+        return None,jsonify({
             "error": "Lỗi khi đọc avl.bin",
             "path": bin_path,
             "exception": str(e)
         }), 500
 
     # Đếm số node trong cây
-    total_nodes = tree.count_nodes(root)
+    total_nodes = tree.count_nodes(root) if tree else 0
 
-    return jsonify({
+    json_results = jsonify({
         "message": "Load thành công AVL tree từ avl.bin",
         "path": bin_path,
         "total_nodes": total_nodes
     })
+
+    return root, None, None
+
+# 4.1. Hàm traverse cây AVL để lấy tất cả thuật ngữ
+def inorder_traverse(node, results):
+    if not node:
+        return
+    inorder_traverse(node.left, results)
+    results.append({
+        "id": getattr(node, "offset", None),
+        "word": getattr(node, "term", ""),
+        "definition": getattr(node, "definition", ""),
+        "context": (getattr(node, "context", [""])) [0] if getattr(node, "context", None) else "",
+        "source": "AVL tree",
+        "createdAt": getattr(getattr(node, "metadata", None), "created_at", "")
+    })
+    inorder_traverse(node.right, results)
+
+# 4.2. API xem toàn bộ từ
+@app.route("/all-terms", methods=["GET"])
+def api_get_all_terms():
+    global root
+
+    # Load AVL tree từ file bin
+    root_node, error_response, status_code = load_tree()
+    if error_response:
+        return error_response, status_code
+    results = []
+    inorder_traverse(root_node, results)
+
+    # print(results)
+
+    return jsonify({
+        "message": "Load và xuất toàn bộ từ thành công",
+        "total_terms": len(results),
+        "data": results
+    })
+
+# 4.3. Xem chi tiết từng từ dựa vào offset
+@app.route("/term_info", methods=["GET"])
+def api_term_info():
+    offset = request.args.get("offset", type=int)
+    if offset is None:
+        return jsonify({"error": "Missing offset"}), 400
+
+    info = load_info_by_offset("data/terms_info.json", offset)
+    if info is None:
+        return jsonify({"error": "Not found"}), 404
+    print (info)
+    return jsonify({"success": True, "data": info})
 
 
 # 5. API INSERT
@@ -435,20 +493,7 @@ def api_delete_term():
         "info_removed": removed_info
     })
 
-# 8. API xem toàn bộ từ
-@app.route("/all-terms", methods=["GET"])
-def api_get_all_terms():
-    results = []
-    for offset, info in TERMS_INFO.items():
-        results.append({
-            "id": offset,
-            "word": info.get("term", info.get("metadata", {}).get("word", "")) or info.get("word", ""),
-            "meaning": info.get("definition", ""),
-            "example": (info.get("context") or [""])[0] if info.get("context") else "",
-            "source": "backend",
-            "createdAt": info.get("metadata", {}).get("created_at", "")
-        })
-    return jsonify({"data": results})
+
 
 
 
@@ -464,14 +509,80 @@ def api_save_terms():
     return jsonify({"success": True, "message": "Dictionary saved to server"})
 
 # upload+extract pdf
+UPLOAD_FOLDER = "uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 @app.route("/upload-extract_pdf", methods=["POST"])
-def api_upload_extract_pdf():
-    if "document" not in request.files:
-        return jsonify({"error": "Missing file"}), 400
-    # TODO: xử lý PDF
-    return jsonify({"success": True, "message": "File received (PDF processing not implemented)"})
+def upload_extract_pdfs():
+    # nhận files
+    if "documents" not in request.files:
+        return jsonify({"success": False, "error": "No files uploaded"}), 400
+    
+    files = request.files.getlist("documents")
+    file_paths = []
 
+    for f in files:
+        filename = secure_filename(f.filename)
+        path = os.path.join(UPLOAD_FOLDER, filename)
+        f.save(path)
+        file_paths.append(path)
 
+    try: # extract pdf > index+info(save)
+        final_terms= process_multi_pdfs(file_paths, dictpath="data/dict.json")
+        # return jsonify({"success": True, "data": terms_index})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+    
+
+    # Load AVL tree từ file bin
+    root, error_response, status_code = load_tree()
+    if error_response:
+        return error_response, status_code
+    global max_offset, TERMS_INFO, tree
+    for item in final_terms:
+#         # 2. Tạo offset tự tăng
+        term = item[0]# term = item["term"]
+        # skip if appears already
+        # nếu đã có → bỏ qua index, chỉ merge context vào info
+        existing = tree.search(root, term)
+        if existing:
+            off = existing.offset
+            # merge context
+            for ctx in item[2]: #item["context"]:
+                if ctx not in TERMS_INFO[off]["context"]:
+                    TERMS_INFO[off]["context"].append(ctx)
+            continue
+
+        # chưa có → thêm mới vào AVL
+        max_offset += 1
+        offset = max_offset
+
+        new_node = AVLNode(term=term, offset=offset)
+        root = tree.insert(root, new_node)
+
+        # Lưu info
+        TERMS_INFO[offset] = {
+            "offset": offset,
+            # "term": term,
+            "definition": item[1], #["definition"],
+            "context": item[2], #"context"],
+            "metadata": {}
+        }
+    
+    # 5. AUTO-SAVE: info+bin
+
+    auto_save(root, TERMS_INFO)
+
+    # 4) Load lại toàn bộ terms để trả về FE
+    results = []
+    inorder_traverse(root, results)
+
+    return jsonify({
+        "message": "Upload PDF → Extract → Build AVL thành công",
+        "total_terms": len(results),
+        "data": results
+    })
+        
+    
 
 if __name__ == "__main__":
     os.makedirs("data", exist_ok=True)

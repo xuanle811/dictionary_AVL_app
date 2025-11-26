@@ -1,7 +1,7 @@
 import json
 from avl.node import AVLNode
 
-
+# load từ json index > cây 
 def load_terms_index(index_path):
     with open(index_path, "r", encoding="utf-8") as f:
         index_data = json.load(f)

@@ -136,6 +136,7 @@ class AVLTree:
         """
         node = self.search(root, term)
         return node is not None
+    
     # Xuat tu dien
 
     def inorder(self, root, out_list):
@@ -144,6 +145,7 @@ class AVLTree:
             out_list.append(root)
             self.inorder(root.right, out_list)
     # khoảng cách Levenshtein giữa hai chuỗi s1 và s2.
+
 
     def levenshtein_distance(self, s1, s2):
         m, n = len(s1), len(s2)
